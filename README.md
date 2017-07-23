@@ -25,6 +25,13 @@ You can use `test-phantom.sh` to run all the browser tests using phantomjs.
 
 You can use `test-node.sh` to run all the node tests using nodejs.
 
+You can change the test output format using FORMAT= variable (spec, xml, html, json etc)
+
+```bash
+FORMAT=spec ./test-node.sh
+FORMAT=spec ./test-phantom.sh
+```
+
 You can construct `index.html` for running the tests in browser:
 
 ```bash
