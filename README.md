@@ -38,8 +38,15 @@ find browser/ -name test.html | sort | perl -pne '
 ' > index.html
 ```
 
-URL references from the book:
+# URL references from the book:
+
+## Introduction
 
  * [AsciiDoc text based document generation](http://www.methods.co.nz/asciidoc/#_introduction)
- * []()
+ * [DocBook Project publish to HTML, pdf, or e-book formats](http://docbook.sourceforge.net/)
+ * [Pygments syntax highlighter](http://pygments.org/)
+ * [XSLT processor tool](http://xmlsoft.org/XSLT/xsltproc2.html)
+ * [Apache Formatting Objects Processor](https://xmlgraphics.apache.org/fop/)
+ * [PhantomJS headless browser](http://phantomjs.org/)
+ * [NodeJS](https://nodejs.org/en/)
 
