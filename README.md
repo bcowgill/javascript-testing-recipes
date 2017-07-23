@@ -57,3 +57,10 @@ find browser/ -name test.html | sort | perl -pne '
  * [PhantomJS headless browser](http://phantomjs.org/)
  * [NodeJS](https://nodejs.org/en/)
 
+## Testing Frameworks
+ * [Test Anything Protocol](http://testanything.org/)
+ * [Jasmine framework](http://jasmine.github.io/)
+ * [QUnit framework](http://qunitjs.com/)
+ * [Mocha framework](https://mochajs.org/)
+ * [jstest framework](http://jstest.jcoglan.com/)
+
