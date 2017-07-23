@@ -40,6 +40,6 @@ find browser/ -name test.html | sort | perl -pne '
 
 URL references from the book:
 
- * [AsciiDoc text based document generation][http://www.methods.co.nz/asciidoc/#_introduction]
- * [[][]]
+ * [AsciiDoc text based document generation](http://www.methods.co.nz/asciidoc/#_introduction)
+ * []()
 
