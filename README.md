@@ -21,3 +21,25 @@ The `node_modules/` and `vendor/` directories contain third-party libraries, and
 dependencies the examples rely on. You should not need to modify any of these
 files.
 
+You can use test-phantom.sh to run all the browser tests using phantomjs.
+
+You can use test-node.sh to run all the node tests using nodejs.
+
+You can construct index.html for running the tests in browser:
+
+```bash
+find browser/ -name test.html | sort | perl -pne '
+   BEGIN {print "<ul>\n"; }
+   END { print "</ul>\n"; }
+   chomp;
+   m{browser/(.+)/test\.html}xms;
+   $name = $1;
+   $_ = qq{<li><a href="$_">$name test suite</a></li>\n}
+' > index.html
+```
+
+URL references from the book:
+
+ * [[AsciiDoc text based document generation][http://www.methods.co.nz/asciidoc/#_introduction]]
+ * [[][]]
+
