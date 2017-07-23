@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo List</title>
+  </head>
+  <body>
+
+    <div class="todo-form">
+      <p><a class="new-todo" href="/todos/new">Create item</a></p>
+      <form method="post" action="/todos">
+        <input type="hidden" name="id">
+        <p>
+          <label for="todo-title">Title</label>
+          <input type="text" name="title" id="todo-title">
+        </p>
+        <p>
+          <label for="todo-body">Body</label><br>
+          <textarea name="body" id="todo-body"></textarea>
+        </p>
+        <input type="submit" value="Save">
+      </form>
+    </div>
+
+    <table class="todo-list">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="../../vendor/jquery.js"></script>
+    <script src="../../vendor/util.js"></script>
+    <script src="../../node_modules/underscore/underscore.js"></script>
+    <script src="../../node_modules/backbone/backbone.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.runtime.js"></script>
+
+    <script src="../form_validation/form_validator.js"></script>
+    <script src="./lib/todo_model.js"></script>
+    <script src="./lib/todo_form.js"></script>
+    <script src="./lib/todo_editor.js"></script>
+    <script src="./lib/todo_list.js"></script>
+    <script src="./lib/todo_display.js"></script>
+    <script src="./templates/templates.js"></script>
+
+    <script src="./main.js"></script>
+
+  </body>
+</html>
+

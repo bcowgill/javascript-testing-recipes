@@ -1,0 +1,137 @@
+[
+  {
+    "url": "https://api.github.com/repos/faye/faye-websocket-node/issues/27",
+    "labels_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/27/labels{/name}",
+    "comments_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/27/comments",
+    "events_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/27/events",
+    "html_url": "https://github.com/faye/faye-websocket-node/pull/27",
+    "id": 21543895,
+    "number": 27,
+    "title": "Forward networking error events to the websocket event listeners.",
+    "user": {
+      "login": "ramsperger",
+      "id": 382198,
+      "avatar_url": "https://2.gravatar.com/avatar/b04f09671622481fff88959fd0430d1e?d=https%3A%2F%2Fidenticons.github.com%2Fd322ae2d1587a42ce0e9d22f0ad7f685.png&r=x",
+      "gravatar_id": "b04f09671622481fff88959fd0430d1e",
+      "url": "https://api.github.com/users/ramsperger",
+      "html_url": "https://github.com/ramsperger",
+      "followers_url": "https://api.github.com/users/ramsperger/followers",
+      "following_url": "https://api.github.com/users/ramsperger/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ramsperger/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ramsperger/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ramsperger/subscriptions",
+      "organizations_url": "https://api.github.com/users/ramsperger/orgs",
+      "repos_url": "https://api.github.com/users/ramsperger/repos",
+      "events_url": "https://api.github.com/users/ramsperger/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ramsperger/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2013-10-24T19:00:29Z",
+    "updated_at": "2013-10-24T19:00:29Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": "https://github.com/faye/faye-websocket-node/pull/27",
+      "diff_url": "https://github.com/faye/faye-websocket-node/pull/27.diff",
+      "patch_url": "https://github.com/faye/faye-websocket-node/pull/27.patch"
+    },
+    "body": "Handshake failures from HTTP were being fired as errors while connection errors failed to show up. Dispatch network failure events (like connection refused, etc.)"
+  },
+  {
+    "url": "https://api.github.com/repos/faye/faye-websocket-node/issues/26",
+    "labels_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/26/labels{/name}",
+    "comments_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/26/comments",
+    "events_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/26/events",
+    "html_url": "https://github.com/faye/faye-websocket-node/issues/26",
+    "id": 20903841,
+    "number": 26,
+    "title": "Allow server to limit max frame length (avoid DOS and crash)",
+    "user": {
+      "login": "glasser",
+      "id": 16724,
+      "avatar_url": "https://1.gravatar.com/avatar/c7d821986a42c48aff6c10fc030b36bf?d=https%3A%2F%2Fidenticons.github.com%2F4b4035563213d4fc685e4b065326e68e.png&r=x",
+      "gravatar_id": "c7d821986a42c48aff6c10fc030b36bf",
+      "url": "https://api.github.com/users/glasser",
+      "html_url": "https://github.com/glasser",
+      "followers_url": "https://api.github.com/users/glasser/followers",
+      "following_url": "https://api.github.com/users/glasser/following{/other_user}",
+      "gists_url": "https://api.github.com/users/glasser/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/glasser/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/glasser/subscriptions",
+      "organizations_url": "https://api.github.com/users/glasser/orgs",
+      "repos_url": "https://api.github.com/users/glasser/repos",
+      "events_url": "https://api.github.com/users/glasser/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/glasser/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2013-10-12T02:12:05Z",
+    "updated_at": "2013-11-15T04:43:59Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "The Hybi parser (in faye/websocket-driver-node) reads the length of the frame and immediately allocates a `Buffer` of that length.\r\n\r\nIt checks to make sure that the length is no more than `MAX_LENGTH`, which is 2^53 - 1 (the largest precisely representable JS integer), and rejects larger frames with a 1009 error before creating the new `Buffer`.\r\n\r\nThere are two problems here.\r\n\r\nFirst, Node buffers have a max length: 1GB (0x3fffffff, https://github.com/joyent/node/blob/master/src/smalloc.h#L40). If you parse an incoming frame with length between 1GB and `MAX_LENGTH`, the parser will throw (and perhaps crash your whole server).  Unless we expect Node to change its `Buffer` implementation any time soon (or you want to change the API to do something other than put an entire frame into a `Buffer`), `MAX_LENGTH` should probably default to the max Buffer length of 1GB.\r\n\r\nSecondly, even 1GB is a huge amount! Most public-facing production websocket servers will probably want a smaller limit on the frame size: because the hybi parser allocates the buffer just based on the size field (not based on actually reading the full data over the socket), it would be easy to DOS most servers by sending lots of frames in parallel of length 1GB.\r\n\r\n(The hixie draft parsers are not affected as much by this issue because they don't allocate a buffer until the entire contents have been read: you actually have to send 1GB of data in order to make the server allocate 1GB, whereas with hybi you just have to send a frame header to cause the allocation.)\r\n\r\nA user of the low-level driver class can sort of do this: while it's not documented, you can do\r\n\r\n    var driver = websocketDriver.http(...);\r\n    driver.MAX_LENGTH = 10*1000*1000;  // 10 MB max frame length\r\n\r\nBut a user of the higher-level faye/faye-websocket-node can't do this without being even more hacky:\r\n\r\n    var server = new FayeWebSocket(req, socket, body);\r\n    server._driver.MAX_LENGTH = 10*1000*100;  // 10 MB max frame length\r\n\r\nIt would be great if there was an actual API (an option to the WebSocket constructor?) to set this max length field.\r\n\r\nI'm happy to send a PR that implements this, if you let me know what the API should look like!"
+  },
+  {
+    "url": "https://api.github.com/repos/faye/faye-websocket-node/issues/16",
+    "labels_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/16/labels{/name}",
+    "comments_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/16/comments",
+    "events_url": "https://api.github.com/repos/faye/faye-websocket-node/issues/16/events",
+    "html_url": "https://github.com/faye/faye-websocket-node/issues/16",
+    "id": 6865317,
+    "number": 16,
+    "title": "Compression support with \"deflate-frame\" protocol extension",
+    "user": {
+      "login": "nilya",
+      "id": 131207,
+      "avatar_url": "https://0.gravatar.com/avatar/4fa53218cc2c7c79660d653e83182996?d=https%3A%2F%2Fidenticons.github.com%2F0f03d84b33cea196b45241a5ee6407c2.png&r=x",
+      "gravatar_id": "4fa53218cc2c7c79660d653e83182996",
+      "url": "https://api.github.com/users/nilya",
+      "html_url": "https://github.com/nilya",
+      "followers_url": "https://api.github.com/users/nilya/followers",
+      "following_url": "https://api.github.com/users/nilya/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nilya/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nilya/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nilya/subscriptions",
+      "organizations_url": "https://api.github.com/users/nilya/orgs",
+      "repos_url": "https://api.github.com/users/nilya/repos",
+      "events_url": "https://api.github.com/users/nilya/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nilya/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2012-09-14T00:37:40Z",
+    "updated_at": "2012-09-23T21:53:18Z",
+    "closed_at": null,
+    "pull_request": {
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Hello.\nWebSockets have protocol extension \"deflate-frame\" for per frame data compression [1].\nWebkit and Chrome already support it (see  [2] and Chrome sends request header \"Sec-WebSocket-Extensions: x-webkit-deflate-frame\").\nDo you have plans to implement compression in WebSockets?\n\n[1] http://tools.ietf.org/id/draft-tyoshino-hybi-websocket-perframe-deflate-05.txt\n[2] http://www.ietf.org/mail-archive/web/hybi/current/msg09463.html"
+  }
+]

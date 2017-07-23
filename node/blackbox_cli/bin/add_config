@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var DEFAULT_CONFIG_PATH = "/etc/add/config.json"
+
+var fs     = require("fs"),
+    args   = process.argv.slice(2),
+    path   = process.env.ADD_CONFIG_PATH || DEFAULT_CONFIG_PATH,
+    config = fs.readFileSync(path)
+
+config = JSON.parse(config.toString("utf8"))
+
+var sum = args.reduce(function(s, n) {
+  n = Number(n)
+  if (config.round) n = Math.round(n)
+  return s + n
+}, 0)
+
+console.log(sum)
+

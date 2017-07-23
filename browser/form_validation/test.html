@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jstest</title>
+  </head>
+  <body>
+
+    <script src="../../node_modules/jstest/jstest.js"></script>
+    <script src="../../vendor/html_fixture.js"></script>
+    <script src="../../vendor/jquery.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.runtime.js"></script>
+    <script src="../../vendor/syn.js"></script>
+
+    <script src="./templates/form_html.js"></script>
+    <script src="./templates/templates.js"></script>
+    <script src="./validate_form.js"></script>
+    <script src="./validate_signup.js"></script>
+    <script src="./form_validator.js"></script>
+    <script src="./interactive_validator.js"></script>
+
+    <script src="./validate_form_spec.js"></script>
+    <script src="./validate_signup_spec.js"></script>
+    <script src="./form_validator_spec.js"></script>
+    <script src="./interactive_validator_spec.js"></script>
+
+    <script>
+      JS.Test.autorun()
+    </script>
+
+  </body>
+</html>
+

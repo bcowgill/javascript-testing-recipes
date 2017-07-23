@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+var round = "ROUND" in process.env,
+    args  = process.argv.slice(2)
+
+var sum = args.reduce(function(s, n) {
+  n = Number(n)
+  if (round) n = Math.round(n)
+  return s + n
+}, 0)
+
+console.log(sum)
+

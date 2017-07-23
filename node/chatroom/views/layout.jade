@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Chatroom
+  body
+    div.header
+      h1 Chatroom
+
+      ul.navigation
+        if user
+          li Logged in as 
+            b= user.get("username")
+          li: a(href="/logout") Log out
+        else
+          li: a(href="/signup") Sign up
+          li: a(href="/login") Log in
+
+    block content
+

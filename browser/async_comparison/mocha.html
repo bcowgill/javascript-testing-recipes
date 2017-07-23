@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mocha</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css">
+    <script src="../../node_modules/mocha/mocha.js"></script>
+  </head>
+  <body>
+
+    <div id="mocha"></div>
+
+    <script>
+      mocha.setup("bdd")
+
+      describe("async", function() {
+        it("works", function(done) {
+          setTimeout(function() {
+            "splines".reticulate()
+            done()
+          }, 500)
+        })
+      })
+
+      mocha.run()
+    </script>
+
+  </body>
+</html>
+

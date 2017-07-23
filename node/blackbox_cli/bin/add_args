@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var nopt = require("nopt")
+
+var params = nopt({round: Boolean}, {}, process.argv),
+    round  = params.round,
+    args   = params.argv.remain
+
+var sum = args.reduce(function(s, n) {
+  n = Number(n)
+  if (round) n = Math.round(n)
+  return s + n
+}, 0)
+
+console.log(sum)
+

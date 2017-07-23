@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf=8">
+    <title>jstest</title>
+  </head>
+  <body>
+
+    <script src="../../node_modules/jstest/jstest.js"></script>
+    <script>
+      var setInterval   = JS.Test.FakeClock.REAL.setInterval,
+          clearInterval = JS.Test.FakeClock.REAL.clearInterval
+    </script>
+
+    <script src="../../vendor/html_fixture.js"></script>
+    <script src="../../vendor/jquery.js"></script>
+
+    <script src="./ticker.js"></script>
+    <script src="./ticker_slow_spec.js"></script>
+    <script src="./ticker_spec.js"></script>
+
+    <script>
+      JS.Test.autorun()
+    </script>
+
+  </body>
+</html>
+

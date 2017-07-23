@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var args = process.argv.slice(2)
+
+var sum = args.reduce(function(s, n) {
+  return s + Number(n)
+}, 0)
+
+console.log(sum)
+

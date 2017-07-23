@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>qunit</title>
+    <link rel="stylesheet" href="../../node_modules/qunitjs/qunit/qunit.css">
+    <script src="../../node_modules/qunitjs/qunit/qunit.js"></script>
+  </head>
+  <body>
+
+    <div id="qunit"></div>
+
+    <script>
+      asyncTest("async", function() {
+        expect(1)
+        setTimeout(function() {
+          "splines".reticulate()
+          ok(true)
+          start()
+        }, 500)
+      })
+    </script>
+
+  </body>
+</html>
+

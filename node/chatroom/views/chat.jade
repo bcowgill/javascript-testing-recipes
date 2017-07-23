@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h2 Chat
+
+  form(method="post", action="/chat", class="room")
+    input(type="hidden", name="_csrf", value=csrf)
+    label(for="room") Room 
+    input(type="text", name="room", id="room")
+    input(type="submit", value="Join")
+
+  p Current room: 
+    span.current-room
+
+  form(method="post", action="chat", class="message")
+    input(type="hidden", name="_csrf", value=csrf)
+    label(for="message") Message 
+    input(type="text", name="message", id="message")
+    input(type="submit", value="Post")
+
+  ul.messages
+
+  script.
+    var SERVER_PORT = #{ port }
+
+  script(src="/jquery.js")
+  script(src="/chat.js")
+

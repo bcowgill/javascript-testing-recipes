@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jstest</title>
+  </head>
+  <body>
+
+    <div id="fixture"></div>
+
+    <script src="../../node_modules/jstest/jstest.js"></script>
+    <script src="../../vendor/jquery.js"></script>
+    <script src="../../vendor/syn.js"></script>
+
+    <script src="./hijack_link.js"></script>
+    <script src="./manual_stub_spec.js"></script>
+    <script src="./auto_stub_spec.js"></script>
+
+    <script>
+      JS.Test.autorun()
+    </script>
+
+  </body>
+</html>
+

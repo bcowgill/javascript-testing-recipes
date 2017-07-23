@@ -1,0 +1,12 @@
+<tr>
+  <td class="todo-title">
+    <a href="/todos/{{id}}">{{title}}</a>
+  </td>
+  <td class="todo-actions">
+    <form class="delete-form" method="post" action="/todos/{{id}}/delete">
+      <input type="hidden" value="{{id}}">
+      <input type="submit" value="Delete">
+    </form>
+  </td>
+</tr>
+

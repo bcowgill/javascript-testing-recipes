@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Log in
+
+  if error
+    p.error= error
+
+  form(method="post", action="/login")
+    input(type="hidden", name="_csrf", value=csrf)
+    p
+      label(for="username") Username 
+      input(type="text", name="username", id="username", value=username)
+    p
+      label(for="password") Password 
+      input(type="password", name="password", id="password")
+    input(type="submit", value="Log in")
+

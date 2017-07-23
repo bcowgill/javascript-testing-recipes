@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h2 Sign up
+
+  if errors
+    div.error
+      p There was a problem with your registration
+      ul
+        each error in errors
+          li= error
+
+  form(method="post", action="/signup")
+    input(type="hidden", name="_csrf", value=csrf)
+    p
+      label(for="username") Username 
+      input(type="text", name="username", id="username", value=username)
+    p
+      label(for="password") Password 
+      input(type="password", name="password", id="password")
+    input(type="submit", value="Sign up")
+

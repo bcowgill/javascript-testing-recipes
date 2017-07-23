@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jstest</title>
+  </head>
+  <body>
+
+    <script src="../../node_modules/jstest/jstest.js"></script>
+    <script src="../../vendor/html_fixture.js"></script>
+    <script src="../../vendor/jquery.js"></script>
+    <script src="../../node_modules/underscore/underscore.js"></script>
+    <script src="../../node_modules/backbone/backbone.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.runtime.js"></script>
+    <script src="../../vendor/syn.js"></script>
+    <script src="../../vendor/util.js"></script>
+
+    <script src="../form_validation/form_validator.js"></script>
+    <script src="./lib/todo_form.js"></script>
+    <script src="./lib/todo_list.js"></script>
+    <script src="./lib/todo_editor.js"></script>
+    <script src="./lib/todo_display.js"></script>
+    <script src="./templates/templates.js"></script>
+    <script src="./lib/todo_model.js"></script>
+
+    <script src="./spec/form_html.js"></script>
+    <script src="./spec/todo_form_spec.js"></script>
+    <script src="./spec/todo_editor_spec.js"></script>
+    <script src="./spec/todo_display_spec.js"></script>
+    <script src="./spec/todo_model_spec.js"></script>
+
+    <script>
+      JS.Test.autorun()
+    </script>
+
+  </body>
+</html>
+

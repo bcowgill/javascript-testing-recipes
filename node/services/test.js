@@ -1,0 +1,10 @@
+var JS = require("jstest")
+require("./spec/validation_spec")
+require("./spec/user_service_spec")
+require("./spec/chat_service_post_message_spec")
+require("./spec/chat_service_poll_messages_spec")
+require("./spec/register_spec")
+require("./spec/post_message_spec")
+require("./spec/get_messages_spec")
+JS.Test.autorun()
+

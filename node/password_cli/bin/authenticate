@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var pw  = require("pw"),
+    CLI = require("../lib/cli")
+
+var program = new CLI({
+  stdout: process.stdout,
+
+  askForPassword: function(callback) {
+    process.stderr.write("Password: ")
+    pw("*", process.stdin, process.stderr, callback)
+  }
+})
+
+program.run(function(error) {
+  if (!error) return
+  console.error(error.message)
+  process.exit(1)
+})
+

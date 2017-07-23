@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+var https  = require("https"),
+    concat = require("concat-stream"),
+    owner  = process.argv[2],
+    repo   = process.argv[3]
+
+var request = https.request({
+  method:   "GET",
+  host:     "api.github.com",
+  path:     "/repos/" + owner + "/" + repo + "/issues",
+  headers:  {"User-Agent": "Node.js"}
+})
+
+request.on("response", function(response) {
+  if (response.statusCode !== 200) {
+    console.error("Repository not found")
+    process.exit(1)
+  }
+
+  response.pipe(concat(function(body) {
+    var issues = JSON.parse(body.toString("utf8"))
+    console.log(issues.length + " open issues:\n")
+
+    issues.forEach(function(issue) {
+      var date = new Date(issue.created_at).toGMTString()
+      console.log("#" + issue.number + ": " + issue.title)
+      console.log(issue.html_url)
+      console.log("[" + issue.user.login + "] " + date + "\n")
+    })
+  }))
+})
+
+request.on("error", function(error) {
+  console.error("Error connecting to GitHub: " + error.message)
+  process.exit(1)
+})
+
+request.end()
+

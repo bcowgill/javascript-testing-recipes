@@ -1,0 +1,10 @@
+var JS = require("jstest")
+require("./spec/add_spec")
+require("./spec/add_args_spec")
+require("./spec/add_args_optimised_spec")
+require("./spec/add_env_spec")
+require("./spec/add_config_spec")
+require("./spec/doge_quick_spec")
+require("./spec/doge_spec")
+JS.Test.autorun()
+

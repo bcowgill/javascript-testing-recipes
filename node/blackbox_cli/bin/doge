@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var readline = require("readline")
+
+var interface = readline.createInterface({
+  input:  process.stdin,
+  output: process.stderr
+})
+
+interface.question("Who's a good doge? ", function(answer) {
+  if (answer === "such question, wow") {
+    console.log("Good doge!")
+    process.exit(0)
+  } else {
+    console.error("Nope")
+    process.exit(1)
+  }
+})
+

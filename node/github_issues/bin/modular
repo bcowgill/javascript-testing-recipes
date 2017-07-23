@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var CLI = require("../lib/cli")
+
+var program = new CLI({
+  argv:   process.argv,
+  stdout: process.stdout
+})
+
+program.run(function(error) {
+  if (!error) return
+  console.error(error.message)
+  process.exit(1)
+})
+
