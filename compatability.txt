@@ -20,7 +20,7 @@ assert.notDeepEqual(actual, expected)       chai.expect(actual).to.not.deep.equa
 assert.equal(actual, expected)              // no analog
 assert.notEqual(actual, expected)           // no analog
 
-// Node assertion function                  QUnit test
+// Node assertion function                  QUnit test function
 
 assert.strictEqual(actual, expected)        strictEqual(actual, expected)
 assert.notStrictEqual(actual, expected)     notStrictEqual(actual, expected)
@@ -30,4 +30,15 @@ assert.notDeepEqual(actual, expected)       notDeepEqual(actual, expected)
 
 assert.equal(actual, expected)              equal(actual, expected)
 assert.notEqual(actual, expected)           notEqual(actual, expected)
+
+// Node assertion function                  jstest assertion function
+
+assert.strictEqual(actual, expected)        assertSame(actual, expected)
+assert.notStrictEqual(actual, expected)     assertNotSame(actual, expected)
+
+assert.deepEqual(actual, expected)          assertEqual(matcher, actual)
+assert.notDeepEqual(actual, expected)       assertNotEqual(matcher, actual)
+
+assert.equal(actual, expected)              // no analog
+assert.notEqual(actual, expected)           // no analog
 
