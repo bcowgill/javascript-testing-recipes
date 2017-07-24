@@ -18,12 +18,20 @@ else
 	if grep testium $SUITE; then
 		SKIP=1
 	fi
+	touch $SUITE.skipped
+	touch $SUITE.failed
 	if [ -z $SKIP ]; then
+		rm $SUITE.skipped
 		echo testing $SUITE
-		$NODE $SUITE
-		echo == $? ==
+		if $NODE $SUITE; then
+			echo == $? ==
+			rm $SUITE.failed
+		else
+			echo == $? ==
+		fi
 	else
 		echo skipping $SUITE
+		rm $SUITE.failed
 	fi
 fi
 

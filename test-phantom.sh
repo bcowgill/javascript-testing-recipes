@@ -18,10 +18,15 @@ else
 	if [ $SUITE == browser/jasmine_before_each/test.html ]; then
 		SKIP=1
 	fi
+	touch $SUITE.failed
 	if [ -z $SKIP ]; then
 		echo testing $SUITE
-		phantomjs phantom.js $SUITE
-		echo == $? ==
+		if phantomjs phantom.js $SUITE; then
+			echo == $? ==
+			rm $SUITE.failed
+		else
+			echo == $? ==
+		fi
 	else
 		echo testing $SUITE with help
 		phantomjs phantom.js $SUITE > test-phantom.json &
@@ -29,6 +34,7 @@ else
 		killall phantomjs
 		if grep '"passed":true' test-phantom.json; then
 			echo == $? ==
+			rm $SUITE.failed
 		else
 			X=$?
 			cat test-phantom.json
