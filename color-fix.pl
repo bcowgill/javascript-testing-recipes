@@ -89,7 +89,7 @@ sub inject_base64
 
 sub replace
 {
-	my ($color) = @_;
+	my ($color) = @ARG;
 	if (exists($colorMap{lc($color)}))
 	{
 		$color = $colorMap{lc($color)};

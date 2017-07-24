@@ -1,0 +1,11 @@
+// Node assertion function                  Jasmine matcher
+
+assert.strictEqual(actual, expected)        expect(actual).toBe(expected)
+assert.notStrictEqual(actual, expected)     expect(actual).not.toBe(expected)
+
+assert.deepEqual(actual, expected)          expect(actual).toEqual(expected)
+assert.notDeepEqual(actual, expected)       expect(actual).not.toEqual(expected)
+
+assert.equal(actual, expected)              // no analog : actual == expected
+assert.notEqual(actual, expected)           // no analog : actual != expected
+
