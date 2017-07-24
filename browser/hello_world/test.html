@@ -1,25 +1,29 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>jstest</title>
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<title>jstest</title>
+	</head>
+	<body>
 
-    <script src="../../node_modules/jstest/jstest.js"></script>
+		<script src="../../node_modules/jstest/jstest.js"></script>
 
-    <script>
-      with (JS.Test) {
-        describe("Hello, world!", function() { with(this) {
-          it("runs a test", function() { with(this) {
-            assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
-          }})
-        }})
+		<script>
+			with (JS.Test) {
+				describe("Hello, world!", function() { with(this) {
+					it("runs a test", function() { with(this) {
+						assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
+					}})
+					it("skips a test")
+					it("fails a test", function() { with(this) {
+						assertEqual( "Hello, world!", ["Hello", "world!"].join(",  ") )
+					}})
+				}})
 
-        autorun()
-      }
-    </script>
+				autorun()
+			}
+		</script>
 
-  </body>
+	</body>
 </html>
 
