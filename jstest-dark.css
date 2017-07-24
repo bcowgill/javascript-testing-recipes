@@ -1,4 +1,4 @@
-body {
+body { /* BASC added */
   background:   #000;
   color:        #bbb;
 }
@@ -80,13 +80,13 @@ body {
   overflow:     hidden;
 }
 .test-result-container .light-pending {
-  background:   #039;
+  background:   #fc6;
 }
 .test-result-container .light-passed {
   background:   #6c3;
 }
 .test-result-container .light-failed {
-  background:   #1bf;
+  background:   #e40;
 }
 
 .test-result-container .user-agent {
@@ -138,7 +138,7 @@ body {
 }
 
 .test-result-container .specs .failed {
-  color:        #1bf;
+  color:        #e40;
 }
 
 .test-result-container .specs .closed ul.children {
