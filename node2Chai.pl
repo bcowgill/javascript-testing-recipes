@@ -1,25 +1,25 @@
 #!/usr/bin/env perl
-# replace node assert statements with equivalent jasmine ones
+# replace node assert statements with equivalent chai ones
 
 use strict;
 use warnings;
 use English qw(-no_match_vars);
 
 my $DEBUG = $ENV{DEBUG} || 0;
-my $PREFIX = $ENV{PREFIX} || '';
+my $PREFIX = $ENV{PREFIX} || ''; # chai.
 my %replaceAssert = (
-	strictEqual => 'toBe',
-	notStrictEqual => 'not.toBe',
-	deepEqual => 'toEqual',
-	notDeepEqual => 'not.toEqual',
-	equal => 'toBe',        # not strictly equivalent, but close
-	notEqual => 'not.toBe', # not strictly equivalent, but close
+	strictEqual => 'to.be.equal',
+	notStrictEqual => 'to.not.equal',
+	deepEqual => 'to.deep.equal',
+	notDeepEqual => 'to.not.deep.equal',
+	equal => 'to.be.equal',        # not strictly equivalent, but close
+	notEqual => 'to.not.equal',    # not strictly equivalent, but close
 );
 
 if ($DEBUG)
 {
-	$replaceAssert{equal} = 'toNodeAssertEqual';
-	$replaceAssert{notEqual} = 'not.toNodeAssertEqual';
+	$replaceAssert{equal} = 'to.nodeAssertEqual';
+	$replaceAssert{notEqual} = 'to.not.nodeAssertEqual';
 }
 
 main();
@@ -49,7 +49,7 @@ sub replaceAssert
 	}
 	else
 	{
-		warn("no Jasmine replacement for $assert");
+		warn("no Chai replacement for $assert");
 	}
 	return $assert;
 }

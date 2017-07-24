@@ -9,3 +9,13 @@ assert.notDeepEqual(actual, expected)       expect(actual).not.toEqual(expected)
 assert.equal(actual, expected)              // no analog : actual == expected
 assert.notEqual(actual, expected)           // no analog : actual != expected
 
+// Node assertion function                  Chai chain
+
+assert.strictEqual(actual, expected)        chai.expect(actual).to.equal(expected)
+assert.notStrictEqual(actual, expected)     chai.expect(actual).to.not.equal(expected)
+
+assert.deepEqual(actual, expected)          chai.expect(actual).to.deep.equal(expected)
+assert.notDeepEqual(actual, expected)       chai.expect(actual).to.not.deep.equal(expected)
+
+assert.equal(actual, expected)              // no analog
+assert.notEqual(actual, expected)           // no analog
