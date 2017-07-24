@@ -1,6 +1,10 @@
 # Study progress markers
 *.to-do
 
+# Marker files for failing/skipped test plans
+#*.failed
+#*.skipped
+
 # Logs
 logs
 *.log
