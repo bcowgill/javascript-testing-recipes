@@ -9,13 +9,15 @@
     <script src="../../node_modules/jstest/jstest.js"></script>
 
     <script>
-      JS.Test.describe("Hello, world!", function() { with(this) {
-        it("runs a test", function() { with(this) {
-          assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
+      with (JS.Test) {
+        describe("Hello, world!", function() { with(this) {
+          it("runs a test", function() { with(this) {
+            assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
+          }})
         }})
-      }})
 
-      JS.Test.autorun()
+        autorun()
+      }
     </script>
 
   </body>
