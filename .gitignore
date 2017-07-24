@@ -1,3 +1,6 @@
+# Study progress markers
+*.to-do
+
 # Logs
 logs
 *.log
