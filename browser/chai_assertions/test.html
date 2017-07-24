@@ -1,35 +1,37 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>jstest</title>
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<title>jstest</title>
+	</head>
+	<body>
 
-    <script src="../../node_modules/jstest/jstest.js"></script>
-    <script src="../../node_modules/chai/chai.js"></script>
+		<script src="../../node_modules/jstest/jstest.js"></script>
+		<script src="../../node_modules/chai/chai.js"></script>
 
-    <script>
-      JS.Test.describe("Equality assertions", function() { with(this) {
-        it("implements deep equality", function() { with(this) {
-          chai.expect([1,2,3]).to.deep.equal([1,2,3])
-          chai.expect([1,2,3]).to.not.deep.equal([1,2,3,4])
-          chai.expect([1,5,3]).to.not.deep.equal([1,2,3])
-        }})
+		<script>
+			with (JS.Test) {
+				describe("Equality assertions", function() { with(this) {
+					it("implements deep equality", function() { with(this) {
+						chai.expect([1,2,3]).to.deep.equal([1,2,3])
+						chai.expect([1,2,3]).to.not.deep.equal([1,2,3,4])
+						chai.expect([1,5,3]).to.not.deep.equal([1,2,3])
+					}})
 
-        it("implements strict equality", function() { with(this) {
-          var array = [1,2,3]
-          chai.expect(array).to.equal(array)
-          chai.expect(array).to.not.equal([1,2,3])
+					it("implements strict equality", function() { with(this) {
+						var array = [1,2,3]
+						chai.expect(array).to.equal(array)
+						chai.expect(array).to.not.equal([1,2,3])
 
-          chai.expect("123").to.equal("123")
-          chai.expect(123).to.not.equal("123")
-        }})
-      }})
+						chai.expect("123").to.equal("123")
+						chai.expect(123).to.not.equal("123")
+					}})
+				}})
 
-      JS.Test.autorun()
-    </script>
+				autorun()
+			}
+		</script>
 
-  </body>
+	</body>
 </html>
 
