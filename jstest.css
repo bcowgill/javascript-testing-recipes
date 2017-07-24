@@ -1,3 +1,7 @@
+body { /* BASC added */
+  background:   #fff;
+  color:        #444;
+}
 .test-result-container {
   background:   #fff;
   border:       2px solid #444;
@@ -86,8 +90,8 @@
 }
 
 .test-result-container .user-agent {
-  background:   #444;
-  color:        #fff;
+  background:   #fff; /* BSAC was 444 */
+  color:        #bbb; /* BSAC was fff */
   font-size:    80%;
   list-style:   none;
   padding:      4px 12px;
