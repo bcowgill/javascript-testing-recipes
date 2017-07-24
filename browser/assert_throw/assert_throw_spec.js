@@ -18,7 +18,10 @@ with (JS.Test) {
 			//assertThrow("TypeError: undefined is not a function (evaluating '"spline".reticulate()')", function () { "spline".reticulate() })
 		}})
 		it("examines the error message thrown", function () { with (this) {
-			assertSame(wrap(throwMe), "TypeError: undefined is not a function (evaluating '\"spline\".reticulate()')")
+			var chromeErrorMessage = 'TypeError: "spline".reticulate is not a function'
+			var phantomErrorMessage = "TypeError: undefined is not a function (evaluating '\"spline\".reticulate()')"
+			//assertSame(wrap(throwMe), phantomErrorMessage)
+			assertSame(wrap(throwMe), chromeErrorMessage)
 		}})
 		it("in case function does not throw", function () { with (this) {
 			assertSame(wrap(function () {}), "nothing thrown")
