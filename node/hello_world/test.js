@@ -7,11 +7,12 @@ with (JS.Test) {
 			assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
 		}})
 		it("skips a test")
+/*
 		it("fails a test", function() { with(this) {
 			assertEqual( "Hello, world!", ["Hello", "world!"].join(",  ") )
 		}})
+*/
 	}})
-
 	autorun()
 }
 
