@@ -9,6 +9,10 @@ if [ -z $SUITE ]; then
 		./test-phantom.sh $test
 	done
 else
+	DIR=`dirname $SUITE`
+	PLAN=`basename $SUITE .failed`
+	PLAN=`basename $PLAN .skipped`
+	SUITE="$DIR/$PLAN"
 	if [ $SUITE == browser/jasmine_assertions/test.html ]; then
 		SKIP=1
 	fi
