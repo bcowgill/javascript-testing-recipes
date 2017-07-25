@@ -80,4 +80,7 @@ find browser/ -name test.html | sort | perl -pne '
  * [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
  * [jstest assertion API](http://jstest.jcoglan.com/assertions.html)
 
+## After Blocks
+ * [DRY principle](http://en.wikipedia.org/wiki/Don't_repeat_yourself)
+
  * []()
