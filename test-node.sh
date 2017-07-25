@@ -1,5 +1,9 @@
 #!/bin/bash
 # use node to run a test.js file
+# FORMAT=spec ./test-node.sh -- uses the spec output format
+# TEST=only ./test-node.sh   -- only runs describe/it tests with the word only in them
+
+
 SUITE=$1
 
 NODE=`which node`

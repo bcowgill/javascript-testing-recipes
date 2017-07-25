@@ -1,5 +1,8 @@
 #!/bin/bash
 # use phantom to run a test html file
+# FORMAT=spec ./test-node.sh -- uses the spec output format
+# TEST=only ./test-node.sh   -- only runs describe/it tests with the word only in them
+
 SUITE=$1
 
 if [ -z $SUITE ]; then

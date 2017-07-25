@@ -32,6 +32,13 @@ FORMAT=spec ./test-node.sh
 FORMAT=spec ./test-phantom.sh
 ```
 
+You can run specific tests which match a string.
+
+```bash
+TEST=PatternMatcher ./test-node.sh  # only runs it/describe suites with PatternMatcher in their descriptive string.
+TEST=_only_ ./test-node.sh  # simulate it.only or describe.only by adding _only_ to the test name
+```
+
 You can construct `index.html` for running the tests in browser:
 
 ```bash
