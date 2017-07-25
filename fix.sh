@@ -3,6 +3,7 @@
 FILE=$1
 if [ ! -z $FILE ]; then
 	perl -i.bak -pne '
+		s{(function|with)\(}{$1 (}xmsg;
 		s{JS \s+ = \s+ require}{JS = JS || require}xmsg;
 		s{JS\.Test\.describe}{with (JS.Test) \{\ndescribe}xmsg;
 		s{JS\.Test\.autorun\(\)}{autorun()\n\}}xmsg
