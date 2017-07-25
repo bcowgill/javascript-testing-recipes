@@ -58,9 +58,19 @@ find browser/ -name test.html | sort | perl -pne '
  * [NodeJS](https://nodejs.org/en/)
 
 ## Testing Frameworks
+
  * [Test Anything Protocol](http://testanything.org/)
  * [Jasmine framework](http://jasmine.github.io/)
  * [QUnit framework](http://qunitjs.com/)
  * [Mocha framework](https://mochajs.org/)
  * [jstest framework](http://jstest.jcoglan.com/)
 
+## Testing Basics
+
+ * [Nodejs assert API](http://nodejs.org/api/assert.html)
+ * [Jasmine matcher API](http://jasmine.github.io/1.3/introduction.html#section-Included_Matchers)
+ * [Chai API](http://chaijs.com/)
+ * [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+ * [jstest assertion API](http://jstest.jcoglan.com/assertions.html)
+
+ * []()
