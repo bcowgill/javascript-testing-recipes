@@ -5,7 +5,7 @@ var JS    = require("jstest"),
 var redisConfig = {host: "127.0.0.1", port: 6379, database: 15},
     server      = app({redis: redisConfig})
 
-JS.Test.describe("POST /users", function() { with(this) {
+JS.Test.describe("POST /users [-register_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -17,19 +17,19 @@ JS.Test.describe("POST /users", function() { with(this) {
     cleanDatabase(redisConfig)
   }})
 
-  it("rejects missing usernames", function() { with(this) {
+  it("rejects missing usernames [-register_spec:1-]", function() { with(this) {
     post("/users", {})
     checkStatus(409)
     checkJSON({errors: ["Usernames may only contain letters, numbers and underscores"]})
   }})
 
-  it("rejects invalid usernames", function() { with(this) {
+  it("rejects invalid usernames [-register_spec:2-]", function() { with(this) {
     post("/users", {username: "$%^&"})
     checkStatus(409)
     checkJSON({errors: ["Usernames may only contain letters, numbers and underscores"]})
   }})
 
-  it("accepts new usernames and returns a new ID", function() { with(this) {
+  it("accepts new usernames and returns a new ID [-register_spec:3-]", function() { with(this) {
     post("/users", {username: "alice"})
     checkStatus(201)
     checkJSON({id: 1, username: "alice"})
@@ -39,7 +39,7 @@ JS.Test.describe("POST /users", function() { with(this) {
     checkJSON({id: 2, username: "bob"})
   }})
 
-  it("returns the existing ID for registered usernames", function() { with(this) {
+  it("returns the existing ID for registered usernames [-register_spec:4-]", function() { with(this) {
     post("/users", {username: "alice"})
     post("/users", {username: "alice"})
     checkStatus(200)

@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("jQuery", function () { with (this) { addSkip(this)
+	describe("jQuery [-context_spec:0-]", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
 			this.fixture = $("#fixture")
 			fixture.html('<p>Hello</p>')
@@ -10,22 +10,22 @@ with (JS.Test) {
 			fixture.empty()
 		}})
 
-		describe("with a 'message' class", function () { with (this) { addSkip(this)
+		describe("with a 'message' class [-context_spec:1-]", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				p.addClass("message")
 			}})
 
-			it("returns true for existing classes", function () { with (this) {
+			it("returns true for existing classes [-context_spec:2-]", function () { with (this) {
 				assert( p.hasClass("message") )
 			}})
 		}})
 
-		describe("without a 'message' class", function () { with (this) { addSkip(this)
+		describe("without a 'message' class [-context_spec:3-]", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				// no-op
 			}})
 
-			it("returns false for non-existent classes", function () { with (this) {
+			it("returns false for non-existent classes [-context_spec:4-]", function () { with (this) {
 				assertNot( p.hasClass("message") )
 			}})
 		}})

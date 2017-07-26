@@ -1,7 +1,7 @@
 var JS    = require("jstest"),
     steps = require("./server_steps")
 
-JS.Test.describe("Storage server (callbacks)", function() { with(this) {
+JS.Test.describe("Storage server (callbacks) [-async_callbacks_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function(resume) { with(this) {
@@ -14,7 +14,7 @@ JS.Test.describe("Storage server (callbacks)", function() { with(this) {
     })
   }})
 
-  it("saves and retrieves a value", function(resume) { with(this) {
+  it("saves and retrieves a value [-async_callbacks_spec:1-]", function(resume) { with(this) {
     put("/meaning_of_life", {value: "42"}, function() {
       get("/meaning_of_life", function() {
         resume(function(resume) {
@@ -24,7 +24,7 @@ JS.Test.describe("Storage server (callbacks)", function() { with(this) {
     })
   }})
 
-  it("deletes all the data", function(resume) { with(this) {
+  it("deletes all the data [-async_callbacks_spec:2-]", function(resume) { with(this) {
     put("/meaning_of_life", {value: "42"}, function() {
       clearData(function() {
         get("/meaning_of_life", function() {

@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("Ticker (slow)", function () { with (this) { addSkip(this)
+	describe("Ticker (slow) [-ticker_slow_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(' <ul class="test-list"></ul> ')
@@ -12,12 +12,12 @@ with (JS.Test) {
 			ticker.stop()
 		}})
 
-		it("shows no messages at first", function () { with (this) {
+		it("shows no messages at first [-ticker_slow_spec:1-]", function () { with (this) {
 			var messages = $.map(fixture.find("li"), function (li) { return $(li).text() })
 			assertEqual( [], messages )
 		}})
 
-		it("reveals one message each second", function (resume) { with (this) {
+		it("reveals one message each second [-ticker_slow_spec:2-]", function (resume) { with (this) {
 			setTimeout(function () {
 				resume(function (resume) {
 					var messages = $.map(fixture.find("li"), function (li) { return $(li).text() })

@@ -13,14 +13,14 @@
   <body>
 
     <script>
-      describe("Equality assertions", function() {
-        it("implements deep equality", function() {
+      describe("Equality assertions [-test:14-]", function() {
+        it("implements deep equality [-test:15-]", function() {
           expect([1,2,3]).toEqual([1,2,3])
           expect([1,2,3]).not.toEqual([1,2,3,4])
           expect([1,5,3]).not.toEqual([1,2,3])
         })
 
-        it("implements strict equality", function() {
+        it("implements strict equality [-test:16-]", function() {
           var array = [1,2,3]
           expect(array).toBe(array)
           expect(array).not.toBe([1,2,3])

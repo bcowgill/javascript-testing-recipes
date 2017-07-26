@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("TodoEditor", function () { with (this) { addSkip(this)
+	describe("TodoEditor [-todo_editor_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(' \
@@ -24,7 +24,7 @@ with (JS.Test) {
 			this.editor = new TodoEditor(fixture.find(".todo-form"), model)
 		}})
 
-		it("does not save an invalid item", function (resume) { with (this) {
+		it("does not save an invalid item [-todo_editor_spec:1-]", function (resume) { with (this) {
 			expect(model, "save").exactly(0)
 			Syn.click(fixture.find("[type=submit]"), function () {
 				resume(function () {
@@ -33,27 +33,27 @@ with (JS.Test) {
 			})
 		}})
 
-		it("saves a new item", function (resume) { with (this) {
+		it("saves a new item [-todo_editor_spec:2-]", function (resume) { with (this) {
 			expect(model, "save").given({id: "", title: "Buy milk", body: ""})
 			fixture.find("[name=title]").val("Buy milk")
 			Syn.click(fixture.find("[type=submit]"), resume)
 		}})
 
-		it("edits an existing item's title", function (resume) { with (this) {
+		it("edits an existing item's title [-todo_editor_spec:3-]", function (resume) { with (this) {
 			expect(model, "save").given({id: "42", title: "Discover meaning of life", body: ""})
 			model.trigger("load", {id: 42, title: "Hello, world", body: ""})
 			fixture.find("[name=title]").val("Discover meaning of life")
 			Syn.click(fixture.find("[type=submit]"), resume)
 		}})
 
-		it("edits an existing item's body", function (resume) { with (this) {
+		it("edits an existing item's body [-todo_editor_spec:4-]", function (resume) { with (this) {
 			expect(model, "save").given({id: "64", title: "Rent", body: "BY FRIDAY"})
 			model.trigger("load", {id: 64, title: "Rent", body: ""})
 			fixture.find("[name=body]").val("BY FRIDAY")
 			Syn.click(fixture.find("[type=submit]"), resume)
 		}})
 
-		it("creates a new item after editing", function (resume) { with (this) {
+		it("creates a new item after editing [-todo_editor_spec:5-]", function (resume) { with (this) {
 			expect(model, "save").given({id: "", title: "Deploy to Heroku", body: ""})
 			model.trigger("load", {id: 64, title: "Rent", body: ""})
 			Syn.click(fixture.find(".new-todo"), function () {

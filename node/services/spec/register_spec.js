@@ -2,7 +2,7 @@ var JS    = require("jstest"),
     app   = require("../app"),
     steps = require("../../chat_api/spec/server_steps")
 
-JS.Test.describe("POST /users", function() { with(this) {
+JS.Test.describe("POST /users [-register_spec:5-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -18,7 +18,7 @@ JS.Test.describe("POST /users", function() { with(this) {
     stopServer(app)
   }})
 
-  it("returns a 409 Conflict if the input is invalid", function() { with(this) {
+  it("returns a 409 Conflict if the input is invalid [-register_spec:6-]", function() { with(this) {
     expect(validation, "checkUser").given({username: "zack"}).returns(["Invalid username"])
 
     post("/users", {username: "zack"})
@@ -26,7 +26,7 @@ JS.Test.describe("POST /users", function() { with(this) {
     checkJSON({errors: ["Invalid username"]})
   }})
 
-  it("returns a 201 Created if the user is valid and new", function() { with(this) {
+  it("returns a 201 Created if the user is valid and new [-register_spec:7-]", function() { with(this) {
     expect(validation, "checkUser").given({username: "zack"}).returns(null)
     expect(userService, "register").given("zack").yields([null, true, {id: 1}])
 
@@ -35,7 +35,7 @@ JS.Test.describe("POST /users", function() { with(this) {
     checkJSON({id: 1})
   }})
 
-  it("returns a 200 OK if the user is valid and not new", function() { with(this) {
+  it("returns a 200 OK if the user is valid and not new [-register_spec:8-]", function() { with(this) {
     expect(validation, "checkUser").given({username: "zack"}).returns(null)
     expect(userService, "register").given("zack").yields([null, false, {id: 1}])
 
@@ -44,7 +44,7 @@ JS.Test.describe("POST /users", function() { with(this) {
     checkJSON({id: 1})
   }})
 
-  it("returns a 500 if the user service fails", function() { with(this) {
+  it("returns a 500 if the user service fails [-register_spec:9-]", function() { with(this) {
     expect(validation, "checkUser").given({username: "zack"}).returns(null)
     expect(userService, "register").given("zack").yields([new Error("DB is offline")])
 

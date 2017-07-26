@@ -12,14 +12,14 @@ var execute = function(args, callback) {
   }))
 }
 
-JS.Test.describe("add_args 2", function() { with(this) {
-  it("prints the sum of some floats", function(resume) { with(this) {
+JS.Test.describe("add_args 2 [-add_args_optimised_spec:0-]", function() { with(this) {
+  it("prints the sum of some floats [-add_args_optimised_spec:1-]", function(resume) { with(this) {
     execute(["3.14", "2.72"], function(output) {
       resume(function() { assertEqual( "5.86\n", output ) })
     })
   }})
 
-  it("prints the sum of some rounded floats", function(resume) { with(this) {
+  it("prints the sum of some rounded floats [-add_args_optimised_spec:2-]", function(resume) { with(this) {
     execute(["--round", "3.14", "2.72"], function(output) {
       resume(function() { assertEqual( "6\n", output ) })
     })

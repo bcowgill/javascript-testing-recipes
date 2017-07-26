@@ -3,12 +3,12 @@ var JS     = require("jstest"),
     path   = require("path"),
     concat = require("concat-stream")
 
-JS.Test.describe("add_env", function() { with(this) {
+JS.Test.describe("add_env [-add_env_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.executable = path.join(__dirname, "..", "bin", "add_env")
   }})
 
-  it("prints the sum of some rounded floats", function(resume) { with(this) {
+  it("prints the sum of some rounded floats [-add_env_spec:1-]", function(resume) { with(this) {
     var env = Object.create(process.env)
     env.ROUND = "1"
 

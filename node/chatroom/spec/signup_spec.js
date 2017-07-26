@@ -2,7 +2,7 @@ var JS    = require("jstest"),
     app   = require("../app"),
     steps = require("./browser_steps")
 
-JS.Test.describe("Signing up", function() { with(this) {
+JS.Test.describe("Signing up [-signup_spec:5-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -15,12 +15,12 @@ JS.Test.describe("Signing up", function() { with(this) {
     cleanDatabase()
   }})
 
-  it("redirects to the sign-up page when not logged in", function() { with(this) {
+  it("redirects to the sign-up page when not logged in [-signup_spec:6-]", function() { with(this) {
     visit("/")
     checkPath("/signup")
   }})
 
-  it("rejects invalid usernames", function() { with(this) {
+  it("rejects invalid usernames [-signup_spec:7-]", function() { with(this) {
     visit("/signup")
     fillIn("[name=username]", "$%^&")
     clickButton("[type=submit]")
@@ -28,14 +28,14 @@ JS.Test.describe("Signing up", function() { with(this) {
         "Usernames may only contain letters, numbers and underscores")
   }})
 
-  it("rejects blank passwords", function() { with(this) {
+  it("rejects blank passwords [-signup_spec:8-]", function() { with(this) {
     visit("/signup")
     clickButton("[type=submit]")
     checkPath("/signup")
     checkText(".error li:last-child", "Password must not be blank")
   }})
 
-  it("accepts valid sign-ups", function() { with(this) {
+  it("accepts valid sign-ups [-signup_spec:9-]", function() { with(this) {
     visit("/signup")
     fillIn("[name=username]", "alice")
     fillIn("[name=password]", "something")

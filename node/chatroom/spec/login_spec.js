@@ -3,7 +3,7 @@ var JS    = require("jstest"),
     User  = require("../../orm/persisted_user"),
     steps = require("./browser_steps")
 
-JS.Test.describe("Logging in", function() { with(this) {
+JS.Test.describe("Logging in [-login_spec:3-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -20,12 +20,12 @@ JS.Test.describe("Logging in", function() { with(this) {
     cleanDatabase()
   }})
 
-  describe("when the password is valid", function() { with(this) {
+  describe("when the password is valid [-login_spec:4-]", function() { with(this) {
     before(function() { with(this) {
       expect(user, "checkPassword").given("california").returns(true)
     }})
 
-    it("redirects to the chat page", function() { with(this) {
+    it("redirects to the chat page [-login_spec:5-]", function() { with(this) {
       visit("/login")
       fillIn("[name=username]", "alice")
       fillIn("[name=password]", "california")
@@ -35,12 +35,12 @@ JS.Test.describe("Logging in", function() { with(this) {
     }})
   }})
 
-  describe("when the password is not valid", function() { with(this) {
+  describe("when the password is not valid [-login_spec:6-]", function() { with(this) {
     before(function() { with(this) {
       expect(user, "checkPassword").given("new york").returns(false)
     }})
 
-    it("displays the login page with an error", function() { with(this) {
+    it("displays the login page with an error [-login_spec:7-]", function() { with(this) {
       visit("/login")
       fillIn("[name=username]", "alice")
       fillIn("[name=password]", "new york")

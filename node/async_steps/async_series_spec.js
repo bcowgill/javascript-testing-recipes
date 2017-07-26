@@ -2,7 +2,7 @@ var JS    = require("jstest"),
     async = require("async"),
     steps = require("./server_steps")
 
-JS.Test.describe("Storage server (async.series)", function() { with(this) {
+JS.Test.describe("Storage server (async.series) [-async_series_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function(resume) { with(this) {
@@ -18,7 +18,7 @@ JS.Test.describe("Storage server (async.series)", function() { with(this) {
     ], resume)
   }})
 
-  it("saves and retrieves a value", function(resume) { with(this) {
+  it("saves and retrieves a value [-async_series_spec:1-]", function(resume) { with(this) {
     async.series([
       function(cb) { put("/meaning_of_life", {value: "42"}, cb) },
       function(cb) { get("/meaning_of_life", cb) },
@@ -26,7 +26,7 @@ JS.Test.describe("Storage server (async.series)", function() { with(this) {
     ], resume)
   }})
 
-  it("deletes all the data", function(resume) { with(this) {
+  it("deletes all the data [-async_series_spec:2-]", function(resume) { with(this) {
     async.series([
       function(cb) { put("/meaning_of_life", {value: "42"}, cb) },
       function(cb) { clearData(cb) },

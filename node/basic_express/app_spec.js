@@ -2,7 +2,7 @@ var JS    = require("jstest"),
     app   = require("./app"),
     steps = require("../basic_server/server_steps")
 
-JS.Test.describe("Express app", function() { with(this) {
+JS.Test.describe("Express app [-app_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -13,7 +13,7 @@ JS.Test.describe("Express app", function() { with(this) {
     stopServer()
   }})
 
-  it("returns the query parameters as JSON", function() { with(this) {
+  it("returns the query parameters as JSON [-app_spec:1-]", function() { with(this) {
     get("/", {hello: "world", something: "else"})
     checkStatus(200)
     checkJSON({hello: "world", something: "else"})

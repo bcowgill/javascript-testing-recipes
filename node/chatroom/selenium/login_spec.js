@@ -6,7 +6,7 @@ var browser = require("testium").getBrowser(),
 
 store.configure({host: "127.0.0.1", port: 6379, database: 15})
 
-describe("Logging in", function() {
+describe("Logging in [-login_spec:0-]", function() {
   var pathname = function() {
     return url.parse(browser.getUrl()).pathname
   }
@@ -21,7 +21,7 @@ describe("Logging in", function() {
     store.getConnection().flushdb(resume)
   })
 
-  it("redirects to the chat page on successful login", function() {
+  it("redirects to the chat page on successful login [-login_spec:1-]", function() {
     browser.navigateTo("/login")
     browser.type("[name=username]", "bob")
     browser.type("[name=password]", "sideshow")
@@ -30,7 +30,7 @@ describe("Logging in", function() {
     browser.assert.elementHasText(".navigation li:first-child", "Logged in as bob")
   })
 
-  it("renders the form with an error on failed login", function() {
+  it("renders the form with an error on failed login [-login_spec:2-]", function() {
     browser.navigateTo("/login")
     browser.type("[name=username]", "bob")
     browser.type("[name=password]", "the-wrong-word")

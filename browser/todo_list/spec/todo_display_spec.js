@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("TodoDisplay", function () { with (this) { addSkip(this)
+	describe("TodoDisplay [-todo_display_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(' \
@@ -20,28 +20,28 @@ with (JS.Test) {
 			model.trigger("create", {id: 37, title: "Pay rent"})
 		}})
 
-		it("displays the item", function () { with (this) {
+		it("displays the item [-todo_display_spec:1-]", function () { with (this) {
 			var titles = $.map(fixture.find("a"), function (a) { return $(a).text() })
 			assertEqual( ["Pay rent"], titles )
 		}})
 
-		it("updates the item", function () { with (this) {
+		it("updates the item [-todo_display_spec:2-]", function () { with (this) {
 			model.trigger("update", {id: 37, title: "Submit tax return"})
 			var titles = $.map(fixture.find("a"), function (a) { return $(a).text() })
 			assertEqual( ["Submit tax return"], titles )
 		}})
 
-		it("loads an item when clicked", function (resume) { with (this) {
+		it("loads an item when clicked [-todo_display_spec:3-]", function (resume) { with (this) {
 			expect(model, "load").given(37)
 			Syn.click(fixture.find("tbody a"), resume)
 		}})
 
-		it("tells the model to remove an item", function (resume) { with (this) {
+		it("tells the model to remove an item [-todo_display_spec:4-]", function (resume) { with (this) {
 			expect(model, "remove").given(37)
 			Syn.click(fixture.find("tbody .delete-form [type=submit]"), resume)
 		}})
 
-		it("removes a deleted item from view", function () { with (this) {
+		it("removes a deleted item from view [-todo_display_spec:5-]", function () { with (this) {
 			model.trigger("remove", {id: 37})
 			var titles = $.map(fixture.find("a"), function (a) { return $(a).text() })
 			assertEqual( [], titles )

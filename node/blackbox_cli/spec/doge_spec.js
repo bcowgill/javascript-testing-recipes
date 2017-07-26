@@ -2,14 +2,14 @@ var JS    = require("jstest"),
     child = require("child_process"),
     path  = require("path")
 
-JS.Test.describe("doge", function() { with(this) {
+JS.Test.describe("doge [-doge_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.executable = path.join(__dirname, "..", "bin", "doge")
     this.proc       = child.spawn(executable)
     this.output     = null
   }})
 
-  it("rewards a good doge", function(resume) { with(this) {
+  it("rewards a good doge [-doge_spec:1-]", function(resume) { with(this) {
     proc.stdout.on("data", function(chunk) {
       output = chunk.toString("utf8")
     })
@@ -24,7 +24,7 @@ JS.Test.describe("doge", function() { with(this) {
     })
   }})
 
-  it("punishes a bad doge", function(resume) { with(this) {
+  it("punishes a bad doge [-doge_spec:2-]", function(resume) { with(this) {
     proc.stderr.on("data", function(chunk) {
       var response = chunk.toString("utf8")
       if (response === "Who's a good doge? ") {

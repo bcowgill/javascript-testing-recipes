@@ -6,7 +6,7 @@ var JS     = require("jstest"),
     CLI    = require("../lib/cli"),
     github = require("../lib/github")
 
-JS.Test.describe("CLI", function() { with(this) {
+JS.Test.describe("CLI [-cli_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.stdout = new stream.PassThrough()
     this.cli = new CLI({
@@ -15,13 +15,13 @@ JS.Test.describe("CLI", function() { with(this) {
     })
   }})
 
-  describe("when GitHub returns issues", function() { with(this) {
+  describe("when GitHub returns issues [-cli_spec:1-]", function() { with(this) {
     before(function() { with(this) {
       var fixture = fs.readFileSync(path.join(__dirname, "fixtures", "issues.json"), "utf8")
       expect(github, "getIssues").given("foo", "bar").yields([null, JSON.parse(fixture)])
     }})
 
-    it("displays the issues", function(resume) { with(this) {
+    it("displays the issues [-cli_spec:2-]", function(resume) { with(this) {
       cli.run(function() { stdout.end() })
 
       stdout.pipe(concat(function(output) {
@@ -47,12 +47,12 @@ JS.Test.describe("CLI", function() { with(this) {
     }})
   }})
 
-  describe("when GitHub returns an error", function() { with(this) {
+  describe("when GitHub returns an error [-cli_spec:3-]", function() { with(this) {
     before(function() { with(this) {
       stub(github, "getIssues").given("foo", "bar").yields([new Error("ECONNREFUSED")])
     }})
 
-    it("yields the error", function(resume) { with(this) {
+    it("yields the error [-cli_spec:4-]", function(resume) { with(this) {
       cli.run(function(error) {
         resume(function() { assertEqual( "ECONNREFUSED", error.message ) })
       })

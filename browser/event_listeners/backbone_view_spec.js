@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("Backbone view", function () { with (this) { addSkip(this)
+	describe("Backbone view [-backbone_view_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(' <a href="/">Home</a> \
@@ -9,7 +9,7 @@ with (JS.Test) {
 			this.view = new View({el: fixture})
 		}})
 
-		it("changes the heading to the link text", function (resume) { with (this) {
+		it("changes the heading to the link text [-backbone_view_spec:1-]", function (resume) { with (this) {
 			Syn.click(fixture.find("a"), function () {
 				resume(function () {
 					assertEqual( "Home", fixture.find("h2").text() )
@@ -17,14 +17,14 @@ with (JS.Test) {
 			})
 		}})
 
-		describe("handleLinkClick()", function () { with (this) { addSkip(this)
-			it("prevents the default click behaviour", function () { with (this) {
+		describe("handleLinkClick() [-backbone_view_spec:2-]", function () { with (this) { addSkip(this)
+			it("prevents the default click behaviour [-backbone_view_spec:3-]", function () { with (this) {
 				var event = {}
 				expect(event, "preventDefault")
 				view.handleLinkClick(event)
 			}})
 
-			it("sets the heading text", function () { with (this) {
+			it("sets the heading text [-backbone_view_spec:4-]", function () { with (this) {
 				var event = {target: fixture.find("a").get(0)}
 				stub(event, "preventDefault")
 				view.handleLinkClick(event)

@@ -3,12 +3,12 @@ var JS     = require("jstest"),
     path   = require("path"),
     concat = require("concat-stream")
 
-JS.Test.describe("add_args", function() { with(this) {
+JS.Test.describe("add_args [-add_args_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.executable = path.join(__dirname, "..", "bin", "add_args")
   }})
 
-  it("prints the sum of some floats", function(resume) { with(this) {
+  it("prints the sum of some floats [-add_args_spec:1-]", function(resume) { with(this) {
     var proc = child.spawn(executable, ["3.14", "2.72"])
 
     proc.stdout.pipe(concat(function(output) {
@@ -17,7 +17,7 @@ JS.Test.describe("add_args", function() { with(this) {
     }))
   }})
 
-  it("prints the sum of some rounded floats", function(resume) { with(this) {
+  it("prints the sum of some rounded floats [-add_args_spec:2-]", function(resume) { with(this) {
     var proc = child.spawn(executable, ["--round", "3.14", "2.72"])
 
     proc.stdout.pipe(concat(function(output) {

@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("Backbone.Model (spy)", function () { with (this) { addSkip(this)
+	describe("Backbone.Model (spy) [-spy_spec:0-]", function () { with (this) { addSkip(this)
 		var Person = Backbone.Model.extend({
 			toString: function () {
 				return "Person{" + this.get("name") + "}"
@@ -10,7 +10,7 @@ with (JS.Test) {
 			this.person = new Person({name: "Alice"})
 		}})
 
-		it("emits events when attributes change", function () { with (this) {
+		it("emits events when attributes change [-spy_spec:1-]", function () { with (this) {
 			var trigger = sinon.spy(person, "trigger")
 			person.set({name: "Merlin", occupation: "ceramicist"})
 			sinon.assert.calledWithExactly(trigger, "change:name", person, "Merlin", {})

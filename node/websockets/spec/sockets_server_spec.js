@@ -4,7 +4,7 @@ var JS        = require("jstest"),
     WebSocket = require("faye-websocket").Client,
     Sockets   = require("../lib/sockets")
 
-JS.Test.describe("Socket server", function() { with(this) {
+JS.Test.describe("Socket server [-sockets_server_spec:0-]", function() { with(this) {
   before(function(resume) { with(this) {
     this.service = new events.EventEmitter()
     this.sockets = new Sockets(service)
@@ -29,7 +29,7 @@ JS.Test.describe("Socket server", function() { with(this) {
     ws.close()
   }})
 
-  it("routes chats to a subscribed socket", function(resume) { with(this) {
+  it("routes chats to a subscribed socket [-sockets_server_spec:1-]", function(resume) { with(this) {
     ws.send("basement")
 
     setTimeout(function() {
@@ -43,7 +43,7 @@ JS.Test.describe("Socket server", function() { with(this) {
     }, 10)
   }})
 
-  it("does not route chats to an unsubscribed socket", function(resume) { with(this) {
+  it("does not route chats to an unsubscribed socket [-sockets_server_spec:2-]", function(resume) { with(this) {
     service.emit("message", {room: "basement", chat: chat})
 
     setTimeout(function() {

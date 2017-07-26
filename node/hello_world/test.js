@@ -2,13 +2,13 @@
 var JS = JS || require("jstest")
 
 with (JS.Test) {
-	describe("Hello, world!", function() { with(this) {
-		it("runs a test", function() { with(this) {
+	describe("Hello, world! [-test:19-]", function() { with(this) {
+		it("runs a test [-test:20-]", function() { with(this) {
 			assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
 		}})
-		it("skips a test")
+		it("skips a test [-test:21-]")
 /*
-		it("fails a test", function() { with(this) {
+		it("fails a test [-test:22-]", function() { with(this) {
 			assertEqual( "Hello, world!", ["Hello", "world!"].join(",  ") )
 		}})
 */

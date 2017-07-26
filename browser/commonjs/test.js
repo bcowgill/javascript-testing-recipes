@@ -33,7 +33,7 @@ var JS         = require("jstest"),
     handlebars = require("handlebars"),
     templates  = require("../templates/templates")
 
-JS.Test.describe("templates.concert()", function() { with(this) {
+JS.Test.describe("templates.concert() [-test:3-]", function() { with(this) {
   before(function() { with(this) {
     this.concert = {
       artist:    "Boredoms",
@@ -44,11 +44,11 @@ JS.Test.describe("templates.concert()", function() { with(this) {
     this.html = $(handlebars.templates.concert(concert))
   }})
 
-  it("renders the artist name", function() { with(this) {
+  it("renders the artist name [-test:4-]", function() { with(this) {
     assertEqual( "Boredoms", html.find(".artist").text() )
   }})
 
-  it("renders the venue details", function() { with(this) {
+  it("renders the venue details [-test:5-]", function() { with(this) {
     assertEqual( "The Forum, Kentish Town, UK", html.find(".venue").text() )
   }})
 }})
@@ -59,7 +59,7 @@ var JS      = require("jstest"),
     Concert = require("../lib/concert"),
     View    = require("../lib/concert_view")
 
-JS.Test.describe("ConcertView", function() { with(this) {
+JS.Test.describe("ConcertView [-test:6-]", function() { with(this) {
   extend(HtmlFixture)
   fixture(' <div class="concert"></div> ')
 
@@ -73,11 +73,11 @@ JS.Test.describe("ConcertView", function() { with(this) {
     new View(".concert", concert)
   }})
 
-  it("renders the artist name", function() { with(this) {
+  it("renders the artist name [-test:7-]", function() { with(this) {
     assertEqual( "Boredoms", fixture.find(".artist").text() )
   }})
 
-  it("updates the artist name if it changes", function() { with(this) {
+  it("updates the artist name if it changes [-test:8-]", function() { with(this) {
     concert.set("artist", "Low")
     assertEqual( "Low", fixture.find(".artist").text() )
   }})

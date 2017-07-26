@@ -12,8 +12,8 @@ var matchPersonNamed = function (name) {
 }
 
 with (JS.Test) {
-	describe("Person", function () { with(this) {
-		it("has a name", function () { with(this) {
+	describe("Person [-test:17-]", function () { with(this) {
+		it("has a name [-test:18-]", function () { with(this) {
 			assertEqual( matchPersonNamed("Bond"), {name: "Bond"} )
 		}})
 	}})

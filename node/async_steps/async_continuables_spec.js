@@ -5,7 +5,7 @@ var JS    = require("jstest"),
 
 steps = curry.object(steps)
 
-JS.Test.describe("Storage server (continuables)", function() { with(this) {
+JS.Test.describe("Storage server (continuables) [-async_continuables_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function(resume) { with(this) {
@@ -21,7 +21,7 @@ JS.Test.describe("Storage server (continuables)", function() { with(this) {
     ], resume)
   }})
 
-  it("saves and retrieves a value", function(resume) { with(this) {
+  it("saves and retrieves a value [-async_continuables_spec:1-]", function(resume) { with(this) {
     async.series([
       put("/meaning_of_life", {value: "42"}),
       get("/meaning_of_life"),
@@ -29,7 +29,7 @@ JS.Test.describe("Storage server (continuables)", function() { with(this) {
     ], resume)
   }})
 
-  it("deletes all the data", function(resume) { with(this) {
+  it("deletes all the data [-async_continuables_spec:2-]", function(resume) { with(this) {
     async.series([
       put("/meaning_of_life", {value: "42"}),
       clearData(),

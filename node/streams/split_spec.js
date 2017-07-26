@@ -2,12 +2,12 @@ var JS     = require("jstest"),
     Source = require("./source"),
     split  = require("split")
 
-JS.Test.describe("split()", function() { with(this) {
+JS.Test.describe("split() [-split_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.chunks = ["some chop", "ped up\nte", "xt to\n", "parse"]
   }})
 
-  it("splits the input stream on line breaks", function(resume) { with(this) {
+  it("splits the input stream on line breaks [-split_spec:1-]", function(resume) { with(this) {
     var source = new Source(chunks, 10),
         data   = [],
         stream = source.pipe(split())

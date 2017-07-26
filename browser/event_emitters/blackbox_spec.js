@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("jQuery events (black-box)", function () { with (this) { addSkip(this)
+	describe("jQuery events (black-box) [-blackbox_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(" <p></p> <p></p> <p></p> ")
@@ -9,7 +9,7 @@ with (JS.Test) {
 			this.second = paras.get(1)
 		}})
 
-		it("invokes callback with 'this' bound to the element", function (resume) { with (this) {
+		it("invokes callback with 'this' bound to the element [-blackbox_spec:1-]", function (resume) { with (this) {
 			var receiver, event
 
 			paras.on("click", function (e) {

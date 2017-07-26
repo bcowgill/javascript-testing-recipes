@@ -2,7 +2,7 @@ var JS    = require("jstest"),
     app   = require("../app"),
     steps = require("../../chat_api/spec/server_steps")
 
-JS.Test.describe("POST /chat/:roomName", function() { with(this) {
+JS.Test.describe("POST /chat/:roomName [-post_message_spec:6-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -18,7 +18,7 @@ JS.Test.describe("POST /chat/:roomName", function() { with(this) {
     stopServer(app)
   }})
 
-  it("returns a 409 Conflict if the input is invalid", function() { with(this) {
+  it("returns a 409 Conflict if the input is invalid [-post_message_spec:7-]", function() { with(this) {
     expect(validation, "checkMessage")
         .given({roomName: "basement", message: "Hi, there!"})
         .returns(["Invalid message"])
@@ -28,7 +28,7 @@ JS.Test.describe("POST /chat/:roomName", function() { with(this) {
     checkJSON({errors: ["Invalid message"]})
   }})
 
-  it("returns a 201 Created if the input is valid", function() { with(this) {
+  it("returns a 201 Created if the input is valid [-post_message_spec:8-]", function() { with(this) {
     expect(validation, "checkMessage")
         .given({roomName: "basement", message: "Hi, there!"})
         .returns(null)

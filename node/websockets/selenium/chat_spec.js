@@ -5,7 +5,7 @@ var browser = require("testium").getBrowser(),
 
 store.configure({host: "127.0.0.1", port: 6379, database: 15})
 
-describe("Chatting", function() {
+describe("Chatting [-chat_spec:2-]", function() {
   beforeEach(function(resume) {
     new User({username: "bob", password: "sideshow", workFactor: 1}).save(resume)
   })
@@ -16,7 +16,7 @@ describe("Chatting", function() {
     store.getConnection().flushdb(resume)
   })
 
-  it("displays messages the user posts", function() {
+  it("displays messages the user posts [-chat_spec:3-]", function() {
     browser.navigateTo("/login")
     browser.type("[name=username]", "bob")
     browser.type("[name=password]", "sideshow")

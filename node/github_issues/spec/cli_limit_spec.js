@@ -6,7 +6,7 @@ var JS     = require("jstest"),
     CLI    = require("../lib/cli_limit"),
     github = require("../lib/github")
 
-JS.Test.describe("CLI with limit", function() { with(this) {
+JS.Test.describe("CLI with limit [-cli_limit_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.stdout = new stream.PassThrough()
     this.cli = new CLI({
@@ -17,7 +17,7 @@ JS.Test.describe("CLI with limit", function() { with(this) {
     expect(github, "getIssues").given("foo", "bar").yields([null, JSON.parse(fixture)])
   }})
 
-  it("displays a limited number of issues", function(resume) { with(this) {
+  it("displays a limited number of issues [-cli_limit_spec:1-]", function(resume) { with(this) {
     cli.run(function() { stdout.end() })
 
     stdout.pipe(concat(function(output) {

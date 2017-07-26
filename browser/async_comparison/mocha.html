@@ -13,8 +13,8 @@
     <script>
       mocha.setup("bdd")
 
-      describe("async", function() {
-        it("works", function(done) {
+      describe("async [-mocha:0-]", function() {
+        it("works [-mocha:1-]", function(done) {
           setTimeout(function() {
             "splines".reticulate()
             done()

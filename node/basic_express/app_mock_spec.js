@@ -1,8 +1,8 @@
 var JS  = require("jstest"),
     app = require("./app")
 
-JS.Test.describe("Express app (mocking)", function() { with(this) {
-  it("returns the query parameters as JSON", function() { with(this) {
+JS.Test.describe("Express app (mocking) [-app_mock_spec:0-]", function() { with(this) {
+  it("returns the query parameters as JSON [-app_mock_spec:1-]", function() { with(this) {
     var request = {
       method:  "GET",
       url:     "/?hello=world&something=else",

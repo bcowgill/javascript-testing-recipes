@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("FormValidator", function () { with (this) { addSkip(this)
+	describe("FormValidator [-form_validator_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 		fixture(FORM_HTML)
 
@@ -8,7 +8,7 @@ with (JS.Test) {
 			stub(form, "submit")
 		}})
 
-		it("extracts form data and passes it to the validator", function (resume) { with (this) {
+		it("extracts form data and passes it to the validator [-form_validator_spec:1-]", function (resume) { with (this) {
 			fixture.find("[name=email]").val("james@example.com")
 			fixture.find("[name=password]").val("something")
 
@@ -17,30 +17,30 @@ with (JS.Test) {
 			Syn.click(fixture.find("[type=submit]"), resume)
 		}})
 
-		describe("when the validator returns no errors", function () { with (this) { addSkip(this)
+		describe("when the validator returns no errors [-form_validator_spec:2-]", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				stub(this, "validator").returns({})
 				new FormValidator(form, validator)
 			}})
 
-			it("submits the form", function (resume) { with (this) {
+			it("submits the form [-form_validator_spec:3-]", function (resume) { with (this) {
 				expect(form, "submit").exactly(1)
 				Syn.click(fixture.find("[type=submit]"), resume)
 			}})
 		}})
 
-		describe("when the validator returns an error", function () { with (this) { addSkip(this)
+		describe("when the validator returns an error [-form_validator_spec:4-]", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				stub(this, "validator").returns({email: "example.com addresses are not allowed"})
 				new FormValidator(form, validator)
 			}})
 
-			it("doesn't submit the form", function (resume) { with (this) {
+			it("doesn't submit the form [-form_validator_spec:5-]", function (resume) { with (this) {
 				expect(form, "submit").exactly(0)
 				Syn.click(fixture.find("[type=submit]"), resume)
 			}})
 
-			it("displays the error", function (resume) { with (this) {
+			it("displays the error [-form_validator_spec:6-]", function (resume) { with (this) {
 				Syn.click(fixture.find("[type=submit]"), function () {
 					resume(function () {
 						assertEqual( "example.com addresses are not allowed",

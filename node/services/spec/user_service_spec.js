@@ -2,7 +2,7 @@ var JS          = require("jstest"),
     redis       = require("redis"),
     UserService = require("../lib/user_service")
 
-JS.Test.describe("UserService", function() { with(this) {
+JS.Test.describe("UserService [-user_service_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.db = redis.createClient()
     db.select(15)
@@ -13,7 +13,7 @@ JS.Test.describe("UserService", function() { with(this) {
     db.flushdb(resume)
   }})
 
-  it("registers a new user", function(resume) { with(this) {
+  it("registers a new user [-user_service_spec:1-]", function(resume) { with(this) {
     service.register("bob", function(error, created, userData) {
       resume(function() {
         assertNull( error )
@@ -22,12 +22,12 @@ JS.Test.describe("UserService", function() { with(this) {
     })})
   }})
 
-  describe("with an existing user", function() { with(this) {
+  describe("with an existing user [-user_service_spec:2-]", function() { with(this) {
     before(function(resume) { with(this) {
       service.register("bob", resume)
     }})
 
-    it("assigns sequential IDs", function(resume) { with(this) {
+    it("assigns sequential IDs [-user_service_spec:3-]", function(resume) { with(this) {
       service.register("alice", function(error, created, userData) {
         resume(function() {
           assertNull( error )
@@ -36,7 +36,7 @@ JS.Test.describe("UserService", function() { with(this) {
       })})
     }})
 
-    it("returns existing users", function(resume) { with(this) {
+    it("returns existing users [-user_service_spec:4-]", function(resume) { with(this) {
       service.register("bob", function(error, created, userData) {
         resume(function() {
           assertNull( error )

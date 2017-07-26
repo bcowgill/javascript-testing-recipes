@@ -3,7 +3,7 @@ var JS    = require("jstest"),
 
 steps = JS.Test.asyncSteps(steps)
 
-JS.Test.describe("Storage server (async steps)", function() { with(this) {
+JS.Test.describe("Storage server (async steps) [-async_steps_spec:0-]", function() { with(this) {
   include(steps)
 
   before(function() { with(this) {
@@ -15,13 +15,13 @@ JS.Test.describe("Storage server (async steps)", function() { with(this) {
     stopServer()
   }})
 
-  it("saves and retrieves a value", function() { with(this) {
+  it("saves and retrieves a value [-async_steps_spec:1-]", function() { with(this) {
     put("/meaning_of_life", {value: "42"})
     get("/meaning_of_life")
     checkBody("42")
   }})
 
-  it("deletes all the data", function() { with(this) {
+  it("deletes all the data [-async_steps_spec:2-]", function() { with(this) {
     put("/meaning_of_life", {value: "42"})
     clearData()
     get("/meaning_of_life")

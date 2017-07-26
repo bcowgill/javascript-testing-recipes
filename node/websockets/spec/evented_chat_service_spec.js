@@ -3,7 +3,7 @@ var JS          = require("jstest"),
     User        = require("../../orm/persisted_user"),
     ChatService = require("../lib/evented_chat_service")
 
-JS.Test.describe("EventedChatService", function() { with(this) {
+JS.Test.describe("EventedChatService [-evented_chat_service_spec:0-]", function() { with(this) {
   before(function(resume) { with(this) {
     this.service = new ChatService(store.getConnection())
     this.user = new User({username: "james", password: "x", workFactor: 1})
@@ -14,7 +14,7 @@ JS.Test.describe("EventedChatService", function() { with(this) {
     store.getConnection().flushdb(resume)
   }})
 
-  it("emits an event after publishing a message", function(resume) { with(this) {
+  it("emits an event after publishing a message [-evented_chat_service_spec:1-]", function(resume) { with(this) {
     var timestamp = Date.now()
 
     expect(service, "emit").given("message", {

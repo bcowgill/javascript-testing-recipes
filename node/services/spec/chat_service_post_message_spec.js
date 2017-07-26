@@ -3,7 +3,7 @@ var JS          = require("jstest"),
     ChatService = require("../lib/chat_service"),
     UserService = require("../lib/user_service")
 
-JS.Test.describe("ChatService.postMessage()", function() { with(this) {
+JS.Test.describe("ChatService.postMessage() [-chat_service_post_message_spec:0-]", function() { with(this) {
   before(function(resume) { with(this) {
     this.db      = redis.createClient()
     this.users   = new UserService(db)
@@ -18,7 +18,7 @@ JS.Test.describe("ChatService.postMessage()", function() { with(this) {
     db.flushdb(resume)
   }})
 
-  it("does not post the message given an unknown user ID", function(resume) { with(this) {
+  it("does not post the message given an unknown user ID [-chat_service_post_message_spec:1-]", function(resume) { with(this) {
     service.postMessage("garage", 2, "Hello", now, function(error, message) {
       resume(function(resume) {
         assertEqual( "User #2 does not exist", error.message )
@@ -29,7 +29,7 @@ JS.Test.describe("ChatService.postMessage()", function() { with(this) {
     })})})
   }})
 
-  it("posts the message with a valid user ID", function(resume) { with(this) {
+  it("posts the message with a valid user ID [-chat_service_post_message_spec:2-]", function(resume) { with(this) {
     service.postMessage("garage", 1, "Hello", now, function(error, message) {
       resume(function(resume) {
         assertNull( error )

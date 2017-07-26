@@ -6,7 +6,7 @@ var JS        = require("jstest"),
     User      = require("../../orm/persisted_user"),
     app       = require("../app")
 
-JS.Test.describe("WebSockets", function() { with(this) {
+JS.Test.describe("WebSockets [-websocket_spec:0-]", function() { with(this) {
   before(function(resume) { with(this) {
     var user = new User({username: "james", password: "x", workFactor: 1}),
         self = this
@@ -32,7 +32,7 @@ JS.Test.describe("WebSockets", function() { with(this) {
     ], resume)
   }})
 
-  it("echoes published messages to a subscribed WebSocket", function(resume) { with(this) {
+  it("echoes published messages to a subscribed WebSocket [-websocket_spec:1-]", function(resume) { with(this) {
     ws.send("library")
 
     async.series([

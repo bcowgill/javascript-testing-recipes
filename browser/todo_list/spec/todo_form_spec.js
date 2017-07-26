@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("TodoForm", function () { with (this) { addSkip(this)
+	describe("TodoForm [-todo_form_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 		fixture(FORM_HTML)
 
@@ -8,7 +8,7 @@ with (JS.Test) {
 			new TodoForm(fixture.find(".todo-form"))
 		}})
 
-		it("saves a new item", function (resume) { with (this) {
+		it("saves a new item [-todo_form_spec:1-]", function (resume) { with (this) {
 			expect(App.todoList, "saveItem").given({id: "", title: "Buy milk", body: ""})
 			fixture.find("[name=title]").val("Buy milk")
 			Syn.click(fixture.find("[type=submit]"), resume)

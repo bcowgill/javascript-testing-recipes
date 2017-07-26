@@ -53,18 +53,18 @@ with (JS.Test) {
 		return thrown
 	}
 
-	describe("assertThrow", function () { with (this) { addSkip(this)
-		it("makes sure an error is thrown", function () { with (this) {
+	describe("assertThrow [-assert_throw_spec:0-]", function () { with (this) { addSkip(this)
+		it("makes sure an error is thrown [-assert_throw_spec:1-]", function () { with (this) {
 			assertThrow(TypeError, throwMe)
 			//assertThrow("TypeError: undefined is not a function (evaluating '"spline".reticulate()')", function () { "spline".reticulate() })
 		}})
-		it("examines the error message thrown", function () { with (this) {
+		it("examines the error message thrown [-assert_throw_spec:2-]", function () { with (this) {
 			var chromeErrorMessage = 'TypeError: "spline".reticulate is not a function'
 			var phantomErrorMessage = "TypeError: undefined is not a function (evaluating '\"spline\".reticulate()')"
 			var expect = isPhantomJS() ? phantomErrorMessage : chromeErrorMessage;
 			assertSame(wrap(throwMe), expect)
 		}})
-		it("in case function does not throw", function () { with (this) {
+		it("in case function does not throw [-assert_throw_spec:3-]", function () { with (this) {
 			assertSame(wrap(function () {}), "nothing thrown")
 		}})
 	}})

@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("validateForm()", function () { with (this) { addSkip(this)
+	describe("validateForm() [-validate_form_spec:0-]", function () { with (this) { addSkip(this)
 		extend(HtmlFixture)
 
 		fixture(' \
@@ -19,7 +19,7 @@ with (JS.Test) {
 			validateForm(fixture.find(".test-form"))
 		}})
 
-		it("fails if the email address is invalid", function (resume) { with (this) {
+		it("fails if the email address is invalid [-validate_form_spec:1-]", function (resume) { with (this) {
 			fixture.find("[name=email]").val("not-an-email")
 			fixture.find("[name=password]").val("valid-password")
 
@@ -30,7 +30,7 @@ with (JS.Test) {
 			})
 		}})
 
-		it("fails if the password is too short", function (resume) { with (this) {
+		it("fails if the password is too short [-validate_form_spec:2-]", function (resume) { with (this) {
 			fixture.find("[name=email]").val("email@example.com")
 			fixture.find("[name=password]").val("no")
 

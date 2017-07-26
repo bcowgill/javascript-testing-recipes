@@ -5,7 +5,7 @@ var JS     = require("jstest"),
     https  = require("https"),
     path   = require("path")
 
-JS.Test.describe("GitHub", function() { with(this) {
+JS.Test.describe("GitHub [-github_spec:0-]", function() { with(this) {
   before(function() { with(this) {
     this.request  = new events.EventEmitter()
     this.response = fs.createReadStream(path.join(__dirname, "fixtures", "issues.json"))
@@ -15,7 +15,7 @@ JS.Test.describe("GitHub", function() { with(this) {
     stub(request, "end")
   }})
 
-  it("yields the issues on a 200 response", function(resume) { with(this) {
+  it("yields the issues on a 200 response [-github_spec:1-]", function(resume) { with(this) {
     github.getIssues("foo", "bar", function(error, issues) {
       resume(function() {
         assertNull( error )
@@ -27,7 +27,7 @@ JS.Test.describe("GitHub", function() { with(this) {
     request.emit("response", response)
   }})
 
-  it("yields an error on a 404 response", function(resume) { with(this) {
+  it("yields an error on a 404 response [-github_spec:2-]", function(resume) { with(this) {
     github.getIssues("foo", "bar", function(error, issues) {
       resume(function() {
         assertEqual( "Repository not found: /repos/foo/bar/issues", error.message )
@@ -38,7 +38,7 @@ JS.Test.describe("GitHub", function() { with(this) {
     request.emit("response", response)
   }})
 
-  it("yields an error on request error", function(resume) { with(this) {
+  it("yields an error on request error [-github_spec:3-]", function(resume) { with(this) {
     github.getIssues("foo", "bar", function(error, issues) {
       resume(function() {
         assertEqual( "Error connecting to GitHub: No network connection", error.message )
