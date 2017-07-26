@@ -8,6 +8,7 @@ with (JS.Test) {
 			counter.inc(5, function () {
 				resume(function () {
 					assertEqual( 5, counter.count )
+					// throw new Error('assert wwwhhaaaaaat 2?')
 				})
 			})
 		}})
