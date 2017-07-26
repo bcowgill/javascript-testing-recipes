@@ -25,4 +25,4 @@ JS.Test.describe("ConcertView", function() { with(this) {
     assertEqual( "Low", fixture.find(".artist").text() )
   }})
 }})
-  
+

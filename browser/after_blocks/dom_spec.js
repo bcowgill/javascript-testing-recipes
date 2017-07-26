@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("DOM fixtures", function () { with (this) {
+	describe("DOM fixtures", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
 			this.fixture = $("#fixture")
 			fixture.append('<p class="message">Hello</p>')

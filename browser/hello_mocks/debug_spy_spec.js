@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("debug() with spies", function () { with (this) {
+	describe("debug() with spies", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
 			sinon.spy(console, "info")
 		}})

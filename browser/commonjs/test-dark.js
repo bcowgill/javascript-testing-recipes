@@ -82,7 +82,7 @@ JS.Test.describe("ConcertView", function() { with(this) {
     assertEqual( "Low", fixture.find(".artist").text() )
   }})
 }})
-  
+
 
 },{"../lib/concert":1,"../lib/concert_view":2,"jstest":24}],5:[function(require,module,exports){
 var JS = require("jstest")

@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("jQuery", function () { with (this) {
+	describe("jQuery", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
 			this.fixture = $("#fixture")
 			fixture.html('<p>Hello</p>')
@@ -10,7 +10,7 @@ with (JS.Test) {
 			fixture.empty()
 		}})
 
-		describe("with a 'message' class", function () { with (this) {
+		describe("with a 'message' class", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				p.addClass("message")
 			}})
@@ -20,7 +20,7 @@ with (JS.Test) {
 			}})
 		}})
 
-		describe("without a 'message' class", function () { with (this) {
+		describe("without a 'message' class", function () { with (this) { addSkip(this)
 			before(function () { with (this) {
 				// no-op
 			}})

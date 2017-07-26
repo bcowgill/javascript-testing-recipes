@@ -9,7 +9,7 @@ if [ -z $SUITE ]; then
 	TESTS=`find browser/ -name test.html | sort`
 	for test in $TESTS;
 	do
-		./test-phantom.sh $test
+		FORMAT=$FORMAT ./test-phantom.sh $test
 	done
 else
 	DIR=`dirname $SUITE`

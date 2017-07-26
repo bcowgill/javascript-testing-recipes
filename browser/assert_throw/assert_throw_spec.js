@@ -53,7 +53,7 @@ with (JS.Test) {
 		return thrown
 	}
 
-	describe("assertThrow", function () { with (this) {
+	describe("assertThrow", function () { with (this) { addSkip(this)
 		it("makes sure an error is thrown", function () { with (this) {
 			assertThrow(TypeError, throwMe)
 			//assertThrow("TypeError: undefined is not a function (evaluating '"spline".reticulate()')", function () { "spline".reticulate() })
@@ -69,4 +69,3 @@ with (JS.Test) {
 		}})
 	}})
 }
-

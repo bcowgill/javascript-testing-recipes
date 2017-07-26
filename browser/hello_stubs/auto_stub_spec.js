@@ -1,5 +1,5 @@
 with (JS.Test) {
-	describe("Automated stubbing", function () { with (this) {
+	describe("Automated stubbing", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
 			this.fixture = $("#fixture")
 			fixture.html('  <p></p>\
@@ -14,7 +14,7 @@ with (JS.Test) {
 			fixture.empty()
 		}})
 
-		describe("when the link is clicked", function () { with (this) {
+		describe("when the link is clicked", function () { with (this) { addSkip(this)
 			before(function (resume) { with (this) {
 				Syn.click(fixture.find("a"), resume)
 			}})

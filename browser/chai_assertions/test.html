@@ -12,14 +12,14 @@
 
 		<script>
 			with (JS.Test) {
-				describe("Equality assertions", function() { with(this) {
-					it("implements deep equality", function() { with(this) {
+				describe("Equality assertions", function () { with (this) { addSkip(this)
+					it("implements deep equality", function () { with (this) {
 						chai.expect([1,2,3]).to.deep.equal([1,2,3])
 						chai.expect([1,2,3]).to.not.deep.equal([1,2,3,4])
 						chai.expect([1,5,3]).to.not.deep.equal([1,2,3])
 					}})
 
-					it("implements strict equality", function() { with(this) {
+					it("implements strict equality", function () { with (this) {
 						var array = [1,2,3]
 						chai.expect(array).to.equal(array)
 						chai.expect(array).to.not.equal([1,2,3])

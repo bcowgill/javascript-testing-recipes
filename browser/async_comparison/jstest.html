@@ -1,27 +1,29 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>jstest</title>
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<title>jstest</title>
+	</head>
+	<body>
 
-    <script src="../../node_modules/jstest/jstest.js"></script>
-    <script src="../../jstest-skip.js"></script>
+		<script src="../../node_modules/jstest/jstest.js"></script>
+		<script src="../../jstest-skip.js"></script>
 
-    <script>
-      JS.Test.describe("async", function() { with(this) {
-        it("works", function(done) { with(this) {
-          setTimeout(function() {
-            "splines".reticulate()
-            done()
-          }, 500)
-        }})
-      }})
+		<script>
+			with (JS.Test) {
+				describe("async", function () { with (this) { addSkip(this)
+					it("works", function (done) { with (this) {
+						setTimeout(function () {
+							"splines".reticulate()
+							done()
+						}, 500)
+					}})
+				}})
 
-      JS.Test.autorun()
-    </script>
+				autorun()
+			}
+		</script>
 
-  </body>
+	</body>
 </html>
 
