@@ -29,13 +29,13 @@
 			// perl -i.bak -pne 's{\b skip\.i t (\s* \()}{it$1}xmsg' ...
 
 			with (JS.Test) {
-				describe("Hello, world!", function () { with (this) { addSkip(this)
+				describe("Hello, world! [-test:0-]", function () { with (this) { addSkip(this)
 					// console.log("describe", this)
-					it("runs a test", function () { with (this) {
+					it("runs a test [-test:1-]", function () { with (this) {
 						// console.log("it", this)
 						assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
 					}})
-					it("a pending test, no function yet") // jstest will not run this, nor tell you it even exists
+					it("a pending test, no function yet [-test:2-]") // jstest will not run this, nor tell you it even exists
 					it.skip("skip a pending test, no function yet") // will show in console.info
 					it.skip("skip a test", function () { with (this) {
 						assertEqual( "Hello, world!", ["Hello", "world!"].join(", ") )
@@ -48,13 +48,13 @@
 					}})
 */
 /*
-					it("fails a test", function () { with (this) {
+					it("fails a test [-test:3-]", function () { with (this) {
 						assertEqual( "Hello, world!", ["Hello", "world!"].join(",  ") )
 					}})
 */
 				}})
 				describe.skip("A suite to skip", function () { with (this) { addSkip(this)
-					it("a test will be skipped", function () { with (this) {
+					it("a test will be skipped [-test:4-]", function () { with (this) {
 						assertEqual(false, true)
 					}})
 				}})
