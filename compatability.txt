@@ -42,3 +42,33 @@ assert.notDeepEqual(actual, expected)       assertNotEqual(matcher, actual)
 assert.equal(actual, expected)              // no analog
 assert.notEqual(actual, expected)           // no analog
 
+// jstest matchers
+arrayIncluding(item, item, ...) // matches a array which includes all of the matcher items provided
+anything() // matches any value
+instanceOf(type) // matches any value for which typeof value === type, or value instanceof type is true, for example instanceOf(Array) would match [], and instanceOf("string") would match "hello"
+objectIncluding(properties) // matches any object containing all the given properties
+match(pattern) // matches any string matching the regex pattern, or, if pattern has a match() method, any value for which that method returns true
+anyArgs()  // matches any more arguments to a stub function .given() clause
+
+These matchers can be composed, for example
+
+arrayIncluding(objectIncluding({name: match(/cog/)}))
+
+// jstest stubs
+
+stub("add").given(2, 2).returns(4)  // given filters on the parameters passed to the stub i.e. add(2,2) => returns 4 in this case
+var xhr = new $.Deferred()
+xhr.resolve("Hello from the server")
+stub($, "get").returns(xhr.promise())  // returns for functions which return a value directly. i.e. a promise in this case
+stub("valid").given(arrayIncluding("hello", "world")).returns(true)  // can use matchers in the given() filter
+stub("add").given(1, 2, anyArgs()).returns(3)
+
+stub($, "get").yields(["Hello from the server"])  // yields works with functions that have a callback as last parameter i.e. $.get(..., function () {})
+stub($, "get").given("/").yields(["Homepage HTML"])
+stub($, "get").given("/users/18787.json").yields(['{"username":"jcoglan"}'])
+
+// jstest mocks
+// identical to stub api just change stub() to expect() before you call your test function
+expect(console, "info").given(match(/^[0-9]{13} hello$/))  // expects that console.info will be called with a timestamp at start of message.
+
+
