@@ -1,3 +1,8 @@
+Things to try:
+finish reading the jstest library code
+use the async curry method in a mocha test to simplify async testing
+jstest skip support?
+
 // Node assertion function                  Jasmine matcher
 
 assert.strictEqual(actual, expected)        expect(actual).toBe(expected)
@@ -77,3 +82,6 @@ before: sinon.spy(console, "info")
 test:   sinon.assert.calledWithMatch(console.info, /^[0-9]{13} hello$/)
 after:  console.info.restore()
 
+// async testing
+node/async_steps/async_continuables_spec.js shows a nice way to clean up async tests for test frameworks which don't have built in async support using currying
+node/asunc_steps/async_steps_spec.js shows the jstest way to make it even more like sync code
