@@ -31,6 +31,10 @@
 	}
 */
 
+if (typeof JS === 'undefined')
+{
+	JS = require('jstest')
+}
 if (typeof JS.Test.skip !== 'undefined' || typeof JS.Test.addSkip !== 'undefined' || typeof JS.Test.describe.skip !== 'undefined')
 {
 	console.warn('JS.Test.skip, JS.Test.addSkip or JS.Test.describe.skip already exists, could be a problem.')
