@@ -8,7 +8,7 @@ Counter.prototype.inc = function(n, callback) {
   setTimeout(function() {
     // throw new Error("inc ooooooooooooooooops")
     self.count += n
-    callback()
+    callback() // if never uses callback? timeout error
   }, DELAY)
   // throw new Error("inc dddaaaawwwwggg")
 }
