@@ -71,4 +71,9 @@ stub($, "get").given("/users/18787.json").yields(['{"username":"jcoglan"}'])
 // identical to stub api just change stub() to expect() before you call your test function
 expect(console, "info").given(match(/^[0-9]{13} hello$/))  // expects that console.info will be called with a timestamp at start of message.
 
+// sinon spies (jstest has no spies)
+// tracks calls to other functions/objects but lets them go through, unlike a stub or mock
+before: sinon.spy(console, "info")
+test:   sinon.assert.calledWithMatch(console.info, /^[0-9]{13} hello$/)
+after:  console.info.restore()
 

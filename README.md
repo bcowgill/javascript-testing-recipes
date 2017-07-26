@@ -83,4 +83,11 @@ find browser/ -name test.html | sort | perl -pne '
 ## After Blocks
  * [DRY principle](http://en.wikipedia.org/wiki/Don't_repeat_yourself)
 
+## Stub, Mock and Spy
+ * [Synthetic Events - Simulate Web User actions](https://github.com/bitovi/syn)
+ * [jstest stub and mock API](http://jstest.jcoglan.com/mocking.html)
+ * [Sinon stub mock and spy API](http://sinonjs.org/)
+
+## 
+ * []()
  * []()
