@@ -61,3 +61,7 @@ with (JS.Test) {
 	describe.skip = skip.describe
 }
 
+if (typeof module === "object") {
+  module.exports = JS
+}
+

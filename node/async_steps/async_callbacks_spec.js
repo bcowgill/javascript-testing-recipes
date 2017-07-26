@@ -19,7 +19,7 @@ with (JS.Test) {
 			put("/meaning_of_life", {value: "42"}, function () {
 				get("/meaning_of_life", function () {
 					resume(function (resume) {
-						checkBody("42", resume)
+						checkBody("42\n", resume)
 					})
 				})
 			})
@@ -30,7 +30,7 @@ with (JS.Test) {
 				clearData(function () {
 					get("/meaning_of_life", function () {
 						resume(function (resume) {
-							checkBody("Not found", resume)
+							checkBody("Not found\n", resume)
 						})
 					})
 				})

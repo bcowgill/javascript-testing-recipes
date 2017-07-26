@@ -26,7 +26,7 @@ with (JS.Test) {
 			async.series([
 				put("/meaning_of_life", {value: "42"}),
 				get("/meaning_of_life"),
-				checkBody("42")
+				checkBody("42\n")
 			], resume)
 		}})
 
@@ -35,7 +35,7 @@ with (JS.Test) {
 				put("/meaning_of_life", {value: "42"}),
 				clearData(),
 				get("/meaning_of_life"),
-				checkBody("Not found")
+				checkBody("Not found\n")
 			], resume)
 		}})
 	}})

@@ -19,14 +19,14 @@ with (JS.Test) {
 		it("saves and retrieves a value [-async_steps_spec:1-]", function () { with (this) {
 			put("/meaning_of_life", {value: "42"})
 			get("/meaning_of_life")
-			checkBody("42")
+			checkBody("42\n")
 		}})
 
 		it("deletes all the data [-async_steps_spec:2-]", function () { with (this) {
 			put("/meaning_of_life", {value: "42"})
 			clearData()
 			get("/meaning_of_life")
-			checkBody("Not found")
+			checkBody("Not found\n")
 		}})
 	}})
 }

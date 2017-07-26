@@ -23,7 +23,7 @@ with (JS.Test) {
 			async.series([
 				function (cb) { put("/meaning_of_life", {value: "42"}, cb) },
 				function (cb) { get("/meaning_of_life", cb) },
-				function (cb) { checkBody("42", cb) }
+				function (cb) { checkBody("42\n", cb) }
 			], resume)
 		}})
 
@@ -32,7 +32,7 @@ with (JS.Test) {
 				function (cb) { put("/meaning_of_life", {value: "42"}, cb) },
 				function (cb) { clearData(cb) },
 				function (cb) { get("/meaning_of_life", cb) },
-				function (cb) { checkBody("Not found", cb) }
+				function (cb) { checkBody("Not found\n", cb) }
 			], resume)
 		}})
 	}})
