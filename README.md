@@ -81,13 +81,23 @@ find browser/ -name test.html | sort | perl -pne '
  * [jstest assertion API](http://jstest.jcoglan.com/assertions.html)
 
 ## After Blocks
+
  * [DRY principle](http://en.wikipedia.org/wiki/Don't_repeat_yourself)
 
 ## Stub, Mock and Spy
+
  * [Synthetic Events - Simulate Web User actions](https://github.com/bitovi/syn)
  * [jstest stub and mock API](http://jstest.jcoglan.com/mocking.html)
  * [Sinon stub mock and spy API](http://sinonjs.org/)
 
+## Asyncronous Testing
+
+ * [jstest async test API](http://jstest.jcoglan.com/async.html)
+ * [node Express app server](http://expressjs.com/)
+ * [node Request simple way to make http requests](https://npmjs.org/package/request)
+ * [async module to simplify asynchronous javascript](https://npmjs.org/package/async)
+
 ## 
+
  * []()
  * []()
