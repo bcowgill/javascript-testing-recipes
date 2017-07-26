@@ -1,39 +1,40 @@
-var JS    = require("jstest"),
-    steps = require("./server_steps")
+var JS = require("jstest"),
+	steps = require("./server_steps")
 
-JS.Test.describe("Storage server (callbacks) [-async_callbacks_spec:0-]", function() { with(this) {
-  include(steps)
+with (JS.Test) {
+	describe("Storage server (callbacks) [-async_callbacks_spec:0-]", function () { with (this) { addSkip(this)
+		include(steps)
 
-  before(function(resume) { with(this) {
-    startServer(4180, resume)
-  }})
+		before(function (resume) { with (this) {
+			startServer(4180, resume)
+		}})
 
-  after(function(resume) { with(this) {
-    clearData(function() {
-      stopServer(resume)
-    })
-  }})
+		after(function (resume) { with (this) {
+			clearData(function () {
+				stopServer(resume)
+			})
+		}})
 
-  it("saves and retrieves a value [-async_callbacks_spec:1-]", function(resume) { with(this) {
-    put("/meaning_of_life", {value: "42"}, function() {
-      get("/meaning_of_life", function() {
-        resume(function(resume) {
-          checkBody("42", resume)
-        })
-      })
-    })
-  }})
+		it("saves and retrieves a value [-async_callbacks_spec:1-]", function (resume) { with (this) {
+			put("/meaning_of_life", {value: "42"}, function () {
+				get("/meaning_of_life", function () {
+					resume(function (resume) {
+						checkBody("42", resume)
+					})
+				})
+			})
+		}})
 
-  it("deletes all the data [-async_callbacks_spec:2-]", function(resume) { with(this) {
-    put("/meaning_of_life", {value: "42"}, function() {
-      clearData(function() {
-        get("/meaning_of_life", function() {
-          resume(function(resume) {
-            checkBody("Not found", resume)
-          })
-        })
-      })
-    })
-  }})
-}})
-
+		it("deletes all the data [-async_callbacks_spec:2-]", function (resume) { with (this) {
+			put("/meaning_of_life", {value: "42"}, function () {
+				clearData(function () {
+					get("/meaning_of_life", function () {
+						resume(function (resume) {
+							checkBody("Not found", resume)
+						})
+					})
+				})
+			})
+		}})
+	}})
+}
