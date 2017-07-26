@@ -1,3 +1,6 @@
+// a little better than plain async testing with pyramids of doom
+// uses async module to show steps in simple series, but it is verbose
+// see async_continuables.js for something better
 var JS = require("jstest"),
 	async = require("async"),
 	steps = require("./server_steps")

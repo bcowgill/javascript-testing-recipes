@@ -1,3 +1,6 @@
+// this jstest specific method makes async tests look just like syncronous tests
+// but all test logic has to be in the server_steps object so you may have to
+// write a variety of checkBody() type functions to do actual test assertions
 var JS = require("jstest"),
 	steps = require("./server_steps")
 

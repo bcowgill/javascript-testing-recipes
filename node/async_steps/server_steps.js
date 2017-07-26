@@ -20,7 +20,11 @@ var ServerSteps = {
     request(this.host + path, function(error, response, body) {
       self.response = response
       self.response.body = body
-      callback()
+      if (error) {
+        // what to do if error? throw, callback with error?
+        console.error('error from server', error)
+      }
+      callback(error)
     })
   },
 

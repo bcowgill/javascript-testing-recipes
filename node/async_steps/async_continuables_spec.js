@@ -1,3 +1,6 @@
+// This method using async and a curry helper can be used with any test runner framework which
+// supports a resume function being passed into the before/after/it blocks
+// jstest itself has built in support and can make things even simpler. see async_steps_spec.js
 var JS = require("jstest"),
 	async = require("async"),
 	steps = require("./server_steps"),

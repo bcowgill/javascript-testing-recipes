@@ -1,3 +1,5 @@
+// plain old async testing with pyramids of doom.
+// see async_series.js for something a bit better
 var JS = require("jstest"),
 	steps = require("./server_steps")
 
