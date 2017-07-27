@@ -97,6 +97,13 @@ find browser/ -name test.html | sort | perl -pne '
  * [node Request simple way to make http requests](https://npmjs.org/package/request)
  * [async module to simplify asynchronous javascript](https://npmjs.org/package/async)
 
+## Event Emission Testing
+
+ * [jQuery library](http://jquery.com/)
+ * [Node Stream Event API](http://nodejs.org/api/stream.html)
+ * [Node EventEmitter API](http://nodejs.org/api/events.html)
+ * [Backbone UI Model-View Framework](http://backbonejs.org/)
+
 ## 
 
  * []()

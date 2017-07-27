@@ -48,6 +48,13 @@ assert.notDeepEqual(actual, expected)       assertNotEqual(matcher, actual)
 assert.equal(actual, expected)              // no analog
 assert.notEqual(actual, expected)           // no analog
 
+                                            assert, assertNot assertBlock,
+                                            assertInDelta,
+                                            assertKindOf, assertRespondTo,
+                                            assertMatch, assertNoMatch,
+                                            assertNull, assertNotNull,
+                                            assertThrows, assertNothingThrown
+
 // jstest matchers
 arrayIncluding(item, item, ...) // matches a array which includes all of the matcher items provided
 anything() // matches any value
