@@ -3,6 +3,8 @@ var JS     = require("jstest"),
 	Source = require("./source"),
 	Upcase = require("./upcase_transform")
 
+console.log('Upcase', Upcase.name, Upcase)
+
 with (JS.Test) {
 	describe("Upcase.pipe() [-upcase_spec:0-]", function () { with (this) { addSkip(this)
 		before(function () { with (this) {
