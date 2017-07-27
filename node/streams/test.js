@@ -1,4 +1,4 @@
-var JS = require("jstest")
+var JS = require("../../jstest-skip")
 require("./ondata_spec")
 require("./pipe_spec")
 require("./split_spec")
