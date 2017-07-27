@@ -2,6 +2,7 @@ Things to try:
 finish reading the jstest library code
 use the async curry method in a mocha test to simplify async testing
 jstest skip support?
+vendor/util and vendor/html_fixture useful modules for testing
 
 // Node assertion function                  Jasmine matcher
 

@@ -7,6 +7,10 @@ with (JS.Test) {
 			this.buzzer = new Buzzer()
 		}})
 
+		it("is an event emitter [-mock_spec:2a-]", function () { with (this) {
+			assertRespondTo(buzzer, "emit")
+		}})
+
 		it("emits a 'buzz' when pressed [-mock_spec:3-]", function () { with (this) {
 			expect(buzzer, "emit").given("buzz")
 			buzzer.press()
