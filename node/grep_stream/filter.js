@@ -1,19 +1,21 @@
 var stream = require("stream"),
-    util   = require("util")
+    util   = require("util"),
+    makeStreamTransform = require("../streams/transformer").makeStreamTransform
 
-var Filter = function(query) {
+var filter = function (s) {
+  //console.log('filter', s, this._query)
+  if (s.indexOf(this._query) < 0) {
+    s = null
+  }
+  return s
+}
+
+var Filter = function (query) {
   stream.Transform.call(this)
   this._query = query
+  this._transform = makeStreamTransform(filter.bind(this))
 }
 util.inherits(Filter, stream.Transform)
-
-Filter.prototype._transform = function(chunk, encoding, callback) {
-  chunk = chunk.toString("utf8")
-  if (chunk.indexOf(this._query) >= 0) {
-    this.push(chunk)
-  }
-  callback()
-}
 
 module.exports = Filter
 

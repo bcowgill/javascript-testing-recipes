@@ -5,7 +5,9 @@ var stream = require("stream"),
 function makeStreamTransform (fn) {
 	return function (chunk, encoding, callback) {
 		chunk = fn(chunk.toString("utf8"))
-		this.push(chunk)
+		if (chunk !== null) {
+			this.push(chunk)
+		}
 		callback()
 	}
 }
@@ -18,6 +20,7 @@ function transformFactory (fn) {
 	Transform.prototype._transform = makeStreamTransform(fn)
 	return Transform
 }
+transformFactory.makeStreamTransform = makeStreamTransform
 
 module.exports = transformFactory
 

@@ -108,6 +108,17 @@ find browser/ -name test.html | sort | perl -pne '
 
  * [Selenium Automated Browser Testing](http://www.seleniumhq.org/)
 
+## Node Stream Testing
+
+ * [Stream Guide James Halliday](https://github.com/substack/stream-handbook)
+ * [Node Stream Splitter](https://npmjs.org/package/split)
+ * [Node Websocket Stream Module](https://npmjs.org/package/websocket-driver)
+ * [Node Concatenate Stream](https://npmjs.org/package/concat-stream)
+ * [Node Read and Write Stream](https://npmjs.org/package/through)
+ * [Node Map Stream through async function](https://npmjs.org/package/map-stream)
+ * [Dominic Tarr many node stream modules author](https://github.com/dominictarr)
+ * [Node Stream Composition](https://npmjs.org/package/stream-combiner)
+
 ##
 
  * []()
