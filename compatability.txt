@@ -3,6 +3,9 @@ finish reading the jstest library code
 use the async curry method in a mocha test to simplify async testing
 jstest skip support?
 vendor/util and vendor/html_fixture useful modules for testing
+node/event_listeners/listenable.js useful way to add events to an object without using generic strings
+write unit tests for the listenable object
+write a node stream command template like my perl one for editing files in place
 
 // Node assertion function                  Jasmine matcher
 

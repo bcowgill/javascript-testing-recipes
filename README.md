@@ -104,7 +104,11 @@ find browser/ -name test.html | sort | perl -pne '
  * [Node EventEmitter API](http://nodejs.org/api/events.html)
  * [Backbone UI Model-View Framework](http://backbonejs.org/)
 
-## 
+## Event Listening Testing
+
+ * [Selenium Automated Browser Testing](http://www.seleniumhq.org/)
+
+##
 
  * []()
  * []()

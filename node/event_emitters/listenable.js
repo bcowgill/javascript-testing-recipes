@@ -3,8 +3,19 @@ var Listenable = function (object) {
 	this._listeners = []
 }
 
-Listenable.prototype.listen = function (listener) {
+Listenable.prototype.numListening = function () {
+	this._listeners.length
+}
+
+Listenable.prototype.listenToEvent = function (listener) {
 	this._listeners.push(listener)
+}
+
+Listenable.prototype.ignoreEvent = function (listener) {
+	var idx = this._listeners.indexOf(listener)
+	if (idx >= 0) {
+		this._listeners.splice(idx, 1)
+	}
 }
 
 Listenable.prototype.emit = function () {
