@@ -42,13 +42,15 @@ TEST=_only_ ./test-node.sh  # simulate it.only or describe.only by adding _only_
 You can construct `index.html` for running the tests in browser:
 
 ```bash
-find browser/ -name test.html | sort | perl -pne '
+find browser/ -name '*.html' | sort | perl -pne '
    BEGIN {print "<html>\n<head>\n<title>Browser Based Test Plans</title>\n<style>\nbody {\nbackground: black;\ncolor: yellow;\n}\n</style>\n</head>\n<body>\n<h4>Browser Based Test Plans</h4>\n<ul>\n"; }
    END { print "</ul>\n</body>\n</html>\n"; }
    chomp;
-   m{browser/(.+)/test\.html}xms;
+   m{browser/(.+)/(.+)\.html}xms;
    $name = $1;
-   $_ = qq{<li><a href="$_">$name test suite</a></li>\n}
+   $type = $2;
+   $type = ($type eq "test") ? "test suite": "$type page";
+   $_ = qq{<li><a href="$_">$name $type</a></li>\n}
 ' > index.html
 ```
 
