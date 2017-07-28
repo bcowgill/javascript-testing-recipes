@@ -119,6 +119,12 @@ find browser/ -name test.html | sort | perl -pne '
  * [Dominic Tarr many node stream modules author](https://github.com/dominictarr)
  * [Node Stream Composition](https://npmjs.org/package/stream-combiner)
 
+## Form Validation
+
+ * [Progressive Enhancement](http://alistapart.com/article/understandingprogressiveenhancement)
+ * [jstest Browser Testing](http://jstest.jcoglan.com/browser.html)
+ * [Handlebars Template Library](http://handlebarsjs.com/)
+
 ##
 
  * []()
