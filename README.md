@@ -136,6 +136,14 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Facebook React Framework](http://facebook.github.io/react/)
  * [Rendr run Backbone app on client or server](https://www.npmjs.org/package/rendr)
 
+## Talking to the Server
+
+ * [Promises/A+ Specification](http://promisesaplus.com/)
+ * [jQuery jqXHR object](http://api.jquery.com/jQuery.ajax/#jqXHR)
+ * [XMLHttpRequest API reference](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+ * [sinon fakeServer API](http://sinonjs.org/#fakeServer)
+ * [Socket.IO Library](http://socket.io/)
+
 ##
 
  * []()
