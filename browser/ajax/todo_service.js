@@ -26,10 +26,12 @@ TodoService.prototype.save = function(item, callback) {
       callback(new Error(error.responseJSON.error))
     })
   } else {
-    $.post("/todos", item, function(response) {
+    $.post("/todos/", item, function(response) {
       item.id = response.id
       self.trigger("create", item)
       callback(null, item)
+    }, function(error) {
+      callback(new Error(error.responseJSON.error))
     })
   }
 }
