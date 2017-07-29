@@ -5,7 +5,7 @@ with (JS.Test) {
 		}})
 
 		it("sends the item to the server [-save_new_spec:1-]", function () { with (this) {
-			expect($, "post").given("/todos", {title: "Take out the garbage"}, instanceOf(Function))
+			expect($, "post").given("/todos/", {title: "Take out the garbage"}, instanceOf(Function))
 			service.save({title: "Take out the garbage"})
 		}})
 
