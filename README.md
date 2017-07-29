@@ -127,6 +127,15 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [jstest Browser Testing](http://jstest.jcoglan.com/browser.html)
  * [Handlebars Template Library](http://handlebarsjs.com/)
 
+## Modular Interfaces
+
+ * [AngularJS Framework augmented HTML elements](http://angularjs.org/)
+ * [EmberJS Framework](http://emberjs.com/)
+ * [KnockoutJS MV-VM Framework](http://knockoutjs.com/)
+ * [Meteor App Framework](https://www.meteor.com/)
+ * [Facebook React Framework](http://facebook.github.io/react/)
+ * [Rendr run Backbone app on client or server](https://www.npmjs.org/package/rendr)
+
 ##
 
  * []()

@@ -9,6 +9,8 @@ write a node stream command template like my perl one for editing files in place
 node/stream/source.js a useful stream source we can prime with data for testing stream code
 node/stream/transformer.js a factory for creating stream transformers from a string -> string function
 browser/form_validation/form_validator.js interactive_validator.js shows separation of business logic (validation) from presentation and submission`:wq
+write the small integration test between TodoForm, TodoEditor and TodoModel in todo_list example
+rewrite todo_list example using listenable instead of backbone events
 
 // Node assertion function                  Jasmine matcher
 
