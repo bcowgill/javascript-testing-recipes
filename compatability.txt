@@ -101,3 +101,24 @@ after:  console.info.restore()
 // async testing
 node/async_steps/async_continuables_spec.js shows a nice way to clean up async tests for test frameworks which don't have built in async support using currying
 node/asunc_steps/async_steps_spec.js shows the jstest way to make it even more like sync code
+
+CRUD    REST       Service      SQL
+create  POST       save(no id)  INSERT INTO table (fields) VALUES (values)
+read    GET        load(id)     SELECT fields FROM table WHERE condition ...
+update  PUT/PATCH  save(w/id)   UPDATE table SET field=value WHERE condition
+delete  DELETE     remove(id)   DELETE FROM table WHERE condition
+
+debugging ajax calls in the browser, use a log function
+log = function (msg) { return function (resp) { console.log(msg, JSON.stringify(resp)) } }
+> $.ajax({type: "GET", url: "/todos/1", success: log("ITEM"), error: log("ERROR")})
+ITEM {"id":1,"title":"Mow the lawn"}
+> $.ajax({type: "GET", url: "/todos/2", success: log("ITEM"), error: log("ERROR")})
+ERROR {"readyState":4,"responseText":"{\"error\":\"Item not found\"}", ...
+       "responseJSON":{"error":"Item not found"},"status":404,"statusText":"Not Found"}
+
+debugging ajax with promises
+> response = $.ajax({type: "PUT", url: "/todos/1", data: {title: "Mow the lawn"}})
+> response.then(log("ITEM"), log("ERROR"))
+ITEM {"id":1,"title":"Mow the lawn"}
+
+
