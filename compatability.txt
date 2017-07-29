@@ -88,9 +88,15 @@ stub($, "get").yields(["Hello from the server"])  // yields works with functions
 stub($, "get").given("/").yields(["Homepage HTML"])
 stub($, "get").given("/users/18787.json").yields(['{"username":"jcoglan"}'])
 
+// stub out a call to new WebSocket and return our own object
+var socket = {}
+stub("new", "WebSocket").returns(socket)
+
 // jstest mocks
 // identical to stub api just change stub() to expect() before you call your test function
 expect(console, "info").given(match(/^[0-9]{13} hello$/))  // expects that console.info will be called with a timestamp at start of message.
+expect("new", "WebSocket").given("ws://localhost/updates").returns({}) // how to mock a call to new WebSocket
+
 
 // sinon spies (jstest has no spies)
 // tracks calls to other functions/objects but lets them go through, unlike a stub or mock
