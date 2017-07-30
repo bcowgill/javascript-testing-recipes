@@ -155,8 +155,15 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [AJAX Crawling (deprecated)](https://developers.google.com/webmasters/ajax-crawling/docs/specification)
  * [Manipulating Browser History](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history)
 
+## Build Tools
+
+ * [CoffeeScript](http://coffeescript.org/)
+ * [Grunt Task Runner](http://gruntjs.com/)
+ * [GNU Make command](http://www.gnu.org/software/make/)
+ * [Browserify module packager](http://browserify.org/)
+ * [UglifyJS code minimiser/beautifier](https://npmjs.org/package/uglify-js)
+ * [Building JS projects with Make](http://blog.jcoglan.com/2014/02/05/building-javascript-projects-with-make/)
+
 ## 
-
  * []()
  * []()
-
