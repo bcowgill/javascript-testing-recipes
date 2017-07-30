@@ -108,11 +108,11 @@ after:  console.info.restore()
 node/async_steps/async_continuables_spec.js shows a nice way to clean up async tests for test frameworks which don't have built in async support using currying
 node/asunc_steps/async_steps_spec.js shows the jstest way to make it even more like sync code
 
-CRUD    REST       Service      SQL
-create  POST       save(no id)  INSERT INTO table (fields) VALUES (values)
-read    GET        load(id)     SELECT fields FROM table WHERE condition ...
-update  PUT/PATCH  save(w/id)   UPDATE table SET field=value WHERE condition
-delete  DELETE     remove(id)   DELETE FROM table WHERE condition
+CRUD    REST       Event   Service      SQL
+create  POST       create  save(no id)  INSERT INTO table (fields) VALUES (values)
+read    GET        load    load(id)     SELECT fields FROM table WHERE condition ...
+update  PUT/PATCH  update  save(w/id)   UPDATE table SET field=value WHERE condition
+delete  DELETE     remove  remove(id)   DELETE FROM table WHERE condition
 
 debugging ajax calls in the browser, use a log function
 log = function (msg) { return function (resp) { console.log(msg, JSON.stringify(resp)) } }
