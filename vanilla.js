@@ -2,6 +2,7 @@
 // show the global object and any values polluting it
 // ./node_modules/.bin/browserify vanilla.js > vanilla.browser.js
 // ./vanilla.js | less -R
+// phantomjs phantom-page.js vanilla.html
 
 const pollution = require('./pollution')
 
