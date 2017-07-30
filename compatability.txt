@@ -127,4 +127,23 @@ debugging ajax with promises
 > response.then(log("ITEM"), log("ERROR"))
 ITEM {"id":1,"title":"Mow the lawn"}
 
+Figure 4.60. Structure of the location object
+
+                                     href
+                                      |
+        /------------------------------------------------------------\
+
+                       host        pathname                     hash
+                         |            |                          |
+               /------------------\/-----\                    /------\
+
+        http://www.example.com:4567/search?q=concert%20tickets#results
+
+        \---/  \-------------/ \--/       \------------------/
+          |           |         |                  |
+       protocol    hostname    port              search
+
+        \-------------------------/
+                     |
+                  origin
 

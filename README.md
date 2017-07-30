@@ -149,7 +149,14 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage)
  * [IndexedDB API](https://developer.mozilla.org/en/docs/IndexedDB)
 
+## URL Location Testing
+
+ * [Browser Location API](https://developer.mozilla.org/en-US/docs/Web/API/Window.location)
+ * [AJAX Crawling (deprecated)](https://developers.google.com/webmasters/ajax-crawling/docs/specification)
+ * [Manipulating Browser History](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history)
+
 ## 
 
  * []()
  * []()
+
