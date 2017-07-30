@@ -164,6 +164,18 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [UglifyJS code minimiser/beautifier](https://npmjs.org/package/uglify-js)
  * [Building JS projects with Make](http://blog.jcoglan.com/2014/02/05/building-javascript-projects-with-make/)
 
+## Cross-Browser Testing
+ * [Jenkins self-hosted CI](http://jenkins-ci.org/)
+ * [Travis open source hosted CI](https://travis-ci.org/)
+ * [HtmlUnit GUI-less cross-browser simulator](http://htmlunit.sourceforge.net/)
+ * [dead? EnvJS Pure Javascript browser](https://github.com/thatcher/env-js)
+ * [dead? Harmony headless DOM+JS on ruby](https://github.com/mynyml/harmony)
+ * [dying - TestSwarm jQuery's cross-browser testing](https://github.com/jquery/testswarm)
+ * [inactive? - BusterJS cross-browser testing](http://busterjs.org/)
+ * [Karma cross-browser test runner](http://karma-runner.github.io/)
+ * [TestEm cross-browser/node test runner](https://www.npmjs.org/package/testem/)
+
 ## 
+
  * []()
  * []()
