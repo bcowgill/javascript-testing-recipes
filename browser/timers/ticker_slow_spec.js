@@ -4,6 +4,11 @@ with (JS.Test) {
 
 		fixture(' <ul class="test-list"></ul> ')
 
+		function getMessages () {
+			var messages = $.map(this.fixture.find("li"), function (li) { return $(li).text() })
+			return messages
+		}
+
 		before(function () { with (this) {
 			this.ticker = new Ticker(".test-list", ["Uno", "Dos", "Tres"])
 		}})
@@ -13,24 +18,24 @@ with (JS.Test) {
 		}})
 
 		it("shows no messages at first [-ticker_slow_spec:1-]", function () { with (this) {
-			var messages = $.map(fixture.find("li"), function (li) { return $(li).text() })
+			var messages = getMessages.call(this)
 			assertEqual( [], messages )
 		}})
 
 		it("reveals one message each second [-ticker_slow_spec:2-]", function (resume) { with (this) {
 			setTimeout(function () {
 				resume(function (resume) {
-					var messages = $.map(fixture.find("li"), function (li) { return $(li).text() })
+					var messages = getMessages.call(this)
 					assertEqual( ["Uno"], messages )
 
 					setTimeout(function () {
 						resume(function (resume) {
-							messages = $.map(fixture.find("li"), function (li) { return $(li).text() })
+							messages = getMessages.call(this)
 							assertEqual( ["Uno", "Dos"], messages )
 
 							setTimeout(function () {
 								resume(function () {
-									messages = $.map(fixture.find("li"), function (li) { return $(li).text() })
+									messages = getMessages.call(this)
 									assertEqual( ["Uno", "Dos", "Tres"], messages )
 								})
 							}, 1000)
