@@ -144,7 +144,12 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [sinon fakeServer API](http://sinonjs.org/#fakeServer)
  * [Socket.IO Library](http://socket.io/)
 
-##
+## Web Storage
+
+ * [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Storage)
+ * [IndexedDB API](https://developer.mozilla.org/en/docs/IndexedDB)
+
+## 
 
  * []()
  * []()
