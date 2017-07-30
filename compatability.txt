@@ -14,6 +14,7 @@ rewrite todo_list example using listenable instead of backbone events
 write some time tests which fake the time zone/date
 write a model/service and tests for saving to IndexedDB and WebSql
 create a simple unit test project and try using Make, Coffeescript, Typescript, Flow, Browserify, Webpack, Testem, HtmlUnit, Karma, TravisCI
+vanilla/pollution run in phantomjs chrome, firefox, etc and configure global prop array
 
 // Node assertion function                  Jasmine matcher
 
