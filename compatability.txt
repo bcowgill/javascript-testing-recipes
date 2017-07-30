@@ -11,6 +11,9 @@ node/stream/transformer.js a factory for creating stream transformers from a str
 browser/form_validation/form_validator.js interactive_validator.js shows separation of business logic (validation) from presentation and submission`:wq
 write the small integration test between TodoForm, TodoEditor and TodoModel in todo_list example
 rewrite todo_list example using listenable instead of backbone events
+write some time tests which fake the time zone/date
+write a model/service and tests for saving to IndexedDB and WebSql
+create a simple unit test project and try using Make, Coffeescript, Typescript, Flow, Browserify, Webpack, Testem, HtmlUnit, Karma, TravisCI
 
 // Node assertion function                  Jasmine matcher
 
