@@ -23,7 +23,9 @@ TodoStore.prototype.load = function(id) {
 
 TodoStore.prototype.remove = function(id) {
   var item = localStorage.getItem("items:" + id)
-  if (item) this.trigger("remove", JSON.parse(item))
-  localStorage.removeItem("items:" + id)
+  if (item) {
+    this.trigger("remove", JSON.parse(item))
+    localStorage.removeItem("items:" + id)
+  }
 }
 

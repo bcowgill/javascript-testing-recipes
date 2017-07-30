@@ -36,8 +36,15 @@ with (JS.Test) {
 
 		it("tells localStorage to remove an item [-todo_store_remove_spec:4-]", function () { with (this) {
 			// expect(localStorage, "removeItem").given("items:99")
+			stub(testStorage, "getItem").returns(JSON.stringify({id: "fake-id"}))
 			expect(testStorage, "removeItem").given("items:99")
 			store.remove(99)
+		}})
+
+		it("remove from localStorage only if it exists  [-todo_store_remove_spec:5-]", function () { with (this) {
+			stub(testStorage, "getItem").returns(null)
+			expect(testStorage, "removeItem").exactly(0)
+			store.remove(999)
 		}})
 	}})
 }
