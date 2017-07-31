@@ -175,6 +175,13 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Karma cross-browser test runner](http://karma-runner.github.io/)
  * [TestEm cross-browser/node test runner](https://www.npmjs.org/package/testem/)
 
+## Basic Node Server Testing
+
+ * [Apache HTTP Server](http://httpd.apache.org/)
+ * [Nginx HTTP Server](http://nginx.org/)
+ * [Node HTTP API](http://nodejs.org/api/http.html)
+ * [JSClass Equality](http://jsclass.jcoglan.com/equality.html)
+
 ## 
 
  * []()
