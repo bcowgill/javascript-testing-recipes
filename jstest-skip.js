@@ -62,6 +62,6 @@ with (JS.Test) {
 }
 
 if (typeof module === "object") {
-  module.exports = JS
+	module.exports = JS
 }
 

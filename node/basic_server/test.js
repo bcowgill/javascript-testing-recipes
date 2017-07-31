@@ -1,4 +1,4 @@
-var JS = require("jstest")
+var JS = require("../../jstest-skip")
 require("./server_spec")
 require("./server_mock_spec")
 require("./header_matcher_spec")
