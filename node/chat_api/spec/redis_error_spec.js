@@ -11,7 +11,7 @@ JS.Test.describe("register() errors [-redis_error_spec:0-]", function() { with(t
   }})
 
   it("returns a 500 Internal Server Error response [-redis_error_spec:1-]", function(resume) { with(this) {
-    expect(response, "json").given(500, {errors: ["E_ACCESSDENIED"]})
+    expect(response, "json").given(500, {errors: ["E_ACCESSDENIED <>"]})
 
     register(request, response, redis)
     setTimeout(resume, 10)
