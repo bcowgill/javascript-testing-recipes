@@ -189,6 +189,10 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Redis SADD command](http://redis.io/commands/sadd)
  * [Redis ZRANGEBYSCORE command](http://redis.io/commands/zrangebyscore)
 
+## Extracting Services from Server and Testing more efficiently
+
+ * [Underscore Library](http://underscorejs.org/)
+
 ## 
 
  * []()
