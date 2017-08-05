@@ -10,12 +10,12 @@ with (JS.Test) {
 
 			it("rejects invalid usernames [-validation_spec:3-]", function () { with (this) {
 				assertEqual( ["Usernames may only contain letters, numbers and underscores"],
-										 validation.checkUser({username: "**"}) )
+					 validation.checkUser({username: "**"}) )
 			}})
 
 			it("rejects missing usernames [-validation_spec:4-]", function () { with (this) {
 				assertEqual( ["Usernames may only contain letters, numbers and underscores"],
-										 validation.checkUser({}) )
+					 validation.checkUser({}) )
 			}})
 		}})
 
@@ -31,7 +31,7 @@ with (JS.Test) {
 			it("rejects messages with no room name [-validation_spec:7-]", function () { with (this) {
 				delete message.roomName
 				assertEqual( ["Rooms may only contain letters, numbers and underscores"],
-										 validation.checkMessage(message) )
+					 validation.checkMessage(message) )
 			}})
 		}})
 
@@ -42,7 +42,12 @@ with (JS.Test) {
 
 			it("rejects non-numeric 'since' values [-validation_spec:10-]", function () { with (this) {
 				assertEqual( ["The 'since' parameter must be a valid timestamp"],
-										 validation.checkPoll({roomName: "kitchen", since: "whenever"}) )
+					 validation.checkPoll({roomName: "kitchen", since: "whenever"}) )
+			}})
+
+			it("rejects 'since' values which are too old [-validation_spec:11-]", function () { with (this) {
+				assertEqual( ["The 'since' parameter must be a valid timestamp"],
+					 validation.checkPoll({roomName: "kitchen", since: 42}) )
 			}})
 		}})
 	}})

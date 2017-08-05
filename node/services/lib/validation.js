@@ -1,5 +1,6 @@
 module.exports = {
   VALID_NAME:     /^[a-z0-9_]+$/i,
+  EMPTY:          /^ *$/,
 
   USERNAME_ERROR: "Usernames may only contain letters, numbers and underscores",
   ROOMNAME_ERROR: "Rooms may only contain letters, numbers and underscores",
@@ -21,7 +22,7 @@ module.exports = {
         errors   = []
 
     if (!roomName.match(this.VALID_NAME)) errors.push(this.ROOMNAME_ERROR)
-    if (message.match(/^ *$/)) errors.push(this.MESSAGE_ERROR)
+    if (message.match(this.EMPTY)) errors.push(this.MESSAGE_ERROR)
 
     return (errors.length === 0) ? null : errors
   },
