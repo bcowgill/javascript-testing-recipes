@@ -182,6 +182,13 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Node HTTP API](http://nodejs.org/api/http.html)
  * [JSClass Equality](http://jsclass.jcoglan.com/equality.html)
 
+## Servers with Databases and Testing them
+
+ * [Redis Database](http://redis.io/)
+ * [Redis INCR command](http://redis.io/commands/incr)
+ * [Redis SADD command](http://redis.io/commands/sadd)
+ * [Redis ZRANGEBYSCORE command](http://redis.io/commands/zrangebyscore)
+
 ## 
 
  * []()
