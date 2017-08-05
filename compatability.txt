@@ -152,3 +152,7 @@ Figure 4.60. Structure of the location object
                      |
                   origin
 
+Strategy for server testing with a database:
+For database Errors: Use mock on the database object to simulate errors and check that error is returned from server.
+For Success cases: Use black box testing against the server with a local database, which is wiped of data after each test.
+For business logic Errors: Use black box testing as above, set up the necessary state for an error (i.e. create account first, then try to register same account again)
