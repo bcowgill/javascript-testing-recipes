@@ -9,6 +9,8 @@ ChatService.prototype.postMessage = function(room, userId, message, now, callbac
 
   async.waterfall([
     function(cb) {
+      // depends on user service information, ok for now, but if
+      // gets more comples user logic should be moved to user service.
       redis.exists("users:" + userId, cb)
     }, function(exists, cb) {
       var error = (exists === 0) ? "User #" + userId + " does not exist" : null
@@ -49,6 +51,8 @@ ChatService.prototype.getMessage = function(messageId, callback) {
       messageData = data
       messageData.id = parseInt(messageData.id, 10)
       messageData.timestamp = parseInt(messageData.timestamp, 10)
+      // depends on user service information, ok for now, but if
+      // gets more comples user logic should be moved to user service.
       redis.hget("users:" + messageData.userId, "username", cb)
     }, function(username, cb) {
       messageData.username = username

@@ -1,3 +1,5 @@
+// SERVER_PORT=7878 node node/services/main.js
+
 var redis = require("redis"),
     app   = require("./app"),
     env   = process.env

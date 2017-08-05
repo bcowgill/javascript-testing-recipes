@@ -13,6 +13,8 @@ with (JS.Test) {
 
 			db.select(15)
 			users.register("alice", function () { users.register("bob", resume) })
+			this.ALICE = 1
+			this.BOB   = 2
 		}})
 
 		after(function (resume) { with (this) {
@@ -21,8 +23,8 @@ with (JS.Test) {
 
 		describe("with messages posted in a room [-chat_service_poll_messages_spec:1-]", function () { with (this) { addSkip(this)
 			before(function (resume) { with (this) {
-				service.postMessage("attic", 1, "First post!", now - 200, function () {
-					service.postMessage("attic", 2, "Anyone here?", now - 100, resume)
+				service.postMessage("attic", ALICE, "First post!", now - 200, function () {
+					service.postMessage("attic", BOB, "Anyone here?", now - 100, resume)
 				})
 			}})
 
@@ -30,8 +32,8 @@ with (JS.Test) {
 				service.pollMessages("attic", now - 5000, now, function (error, messages) {
 					resume(function () {
 						assertEqual([
-							{id: 1, username: "alice", timestamp: now - 200, message: "First post!"},
-							{id: 2, username: "bob", timestamp: now - 100, message: "Anyone here?"}
+							{id: ALICE, username: "alice", timestamp: now - 200, message: "First post!"},
+							{id: BOB, username: "bob", timestamp: now - 100, message: "Anyone here?"}
 						], messages)
 				})})
 			}})
@@ -40,7 +42,7 @@ with (JS.Test) {
 				service.pollMessages("attic", now - 150, now, function (error, messages) {
 					resume(function () {
 						assertEqual([
-							{id: 2, username: "bob", timestamp: now - 100, message: "Anyone here?"}
+							{id: BOB, username: "bob", timestamp: now - 100, message: "Anyone here?"}
 						], messages)
 				})})
 			}})

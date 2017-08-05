@@ -39,7 +39,7 @@ with (JS.Test) {
 					service.pollMessages("garage", now - 10, now + 10, function (error, messages) {
 						resume(function () {
 							assertEqual( [{id: 1, username: "bob", timestamp: now, message: "Hello"}],
-													 messages )
+								 messages )
 			})})})})
 		}})
 	}})
