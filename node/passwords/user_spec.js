@@ -33,6 +33,13 @@ with (JS.Test) {
 			it("rejects a password with the wrong case [-user_spec:6-]", function () { with (this) {
 				assertNot( user.checkPassword("SeCrEt") )
 			}})
+
+			it("check password 20 times, should take about 10 seconds if WORK_FACTOR set correctly [-user_spec:7-]", function () { with (this) {
+				for (var i = 10; i > 0; --i) {
+					assert( user.checkPassword("secret") )
+				}
+			}})
+
 		}})
 	}})
 }

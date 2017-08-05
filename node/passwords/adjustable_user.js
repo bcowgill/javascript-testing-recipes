@@ -9,7 +9,7 @@ var AdjustableUser = function(attributes) {
 }
 
 AdjustableUser.KEY_LENGTH  = 32
-AdjustableUser.WORK_FACTOR = 200000
+AdjustableUser.WORK_FACTOR = 200000*4.5
 
 AdjustableUser.prototype.setPassword = function(password) {
   var attrs = this._attributes

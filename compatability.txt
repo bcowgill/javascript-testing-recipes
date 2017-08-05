@@ -16,6 +16,7 @@ write a model/service and tests for saving to IndexedDB and WebSql
 create a simple unit test project and try using Make, Coffeescript, Typescript, Flow, Browserify, Webpack, Testem, HtmlUnit, Karma, TravisCI
 vanilla/pollution run in phantomjs chrome, firefox, etc and configure global prop array
 node/basic_server usefule jstest matchers for headers/json from servers
+node/passwords - write a function which will not return before 500ms for async password checking
 
 // Node assertion function                  Jasmine matcher
 
