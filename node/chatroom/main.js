@@ -1,3 +1,4 @@
+// SERVER_PORT=7878 node node/services/main.js
 var store = require("../orm/store"),
     env   = process.env
 
