@@ -30,7 +30,7 @@ with (JS.Test) {
 			payload.userId = 2
 			post("/chat/lounge", payload)
 			checkStatus(409)
-			checkJSON({errors: ["User #2 does not exist"]})
+			checkJSON({errors: ["User #2 does not exist <users:2>"]})
 		}})
 
 		it("accepts valid messages [-post_message_spec:3-]", function () { with (this) {

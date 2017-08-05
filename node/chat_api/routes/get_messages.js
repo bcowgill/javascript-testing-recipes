@@ -17,10 +17,13 @@ module.exports = function(request, response, redis) {
 
   since = parseInt(since, 10)
 
+  var saveState = []
+
   async.waterfall([
     function(cb) {
       redis.zrangebyscore("rooms:" + roomName + ":messages", since, now, cb)
     }, function(messageIds, cb) {
+      saveState.push("rooms:" + roomName + ":messages")
       async.map(messageIds, function(id, cb) {
         var messageData
         async.waterfall([
@@ -30,8 +33,10 @@ module.exports = function(request, response, redis) {
             messageData = data
             messageData.id = parseInt(messageData.id, 10)
             messageData.timestamp = parseInt(messageData.timestamp, 10)
+            saveState.push("messages:" + messageData.id)
             redis.hget("users:" + messageData.userId, "username", cb)
           }, function(username, cb) {
+            saveState.push("users:" + messageData.userId + " username")
             messageData.username = username
             delete messageData.userId
             cb(null, messageData)
@@ -41,8 +46,10 @@ module.exports = function(request, response, redis) {
     }
   ], function(error, messages) {
     if (error) {
-      response.json(500, {error: error.message})
+      var state = saveState.join(", ")
+      response.json(500, {error: error.message + " <" + state + ">"})
     } else {
+      // console.log("state: " + saveState.join(", "))
       response.json(200, {messages: messages})
     }
   })
