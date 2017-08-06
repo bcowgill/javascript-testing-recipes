@@ -1,6 +1,7 @@
 var JS      = require("jstest"),
     Browser = require("./browser"),
-    store   = require("../../orm/store")
+    store   = require("../../orm/store"),
+    printed = false
 
 module.exports = JS.Test.asyncSteps({
   startServer: function(server, callback) {
@@ -9,6 +10,8 @@ module.exports = JS.Test.asyncSteps({
 
     this.port   = this.server.address().port
     this.origin = "http://localhost:" + this.port
+    if (!printed) console.log("server started for testing " + this.origin)
+    printed = true
   },
 
   stopServer: function(callback) {

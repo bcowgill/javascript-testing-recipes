@@ -3,7 +3,9 @@ var cheerio = require("cheerio"),
     request = require("request"),
     url     = require("url"),
     _       = require("underscore")
-    
+
+console.log("using node/chatroom/spec/browser.js as user agent")
+
 var Browser = function(userAgent, origin) {
   this.location = url.parse(origin)
   this._cookies = request.jar()

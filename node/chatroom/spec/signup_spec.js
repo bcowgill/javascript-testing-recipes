@@ -26,7 +26,7 @@ with (JS.Test) {
 			fillIn("[name=username]", "$%^&")
 			clickButton("[type=submit]")
 			checkText(".error li:first-child",
-					"Usernames may only contain letters, numbers and underscores")
+				"Usernames may only contain letters, numbers and underscores")
 		}})
 
 		it("rejects blank passwords [-signup_spec:8-]", function () { with (this) {
