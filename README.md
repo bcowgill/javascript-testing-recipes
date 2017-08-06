@@ -63,7 +63,7 @@ find browser/ -name '*.html' | sort | perl -pne '
  * [Pygments syntax highlighter](http://pygments.org/)
  * [XSLT processor tool](http://xmlsoft.org/XSLT/xsltproc2.html)
  * [Apache Formatting Objects Processor](https://xmlgraphics.apache.org/fop/)
- * [PhantomJS headless browser](http://phantomjs.org/)
+ * [PhantomJS Headless (WebKit) Browser](http://phantomjs.org/)
  * [NodeJS](https://nodejs.org/en/)
 
 ## Testing Frameworks
@@ -192,6 +192,29 @@ find browser/ -name '*.html' | sort | perl -pne '
 ## Extracting Services from Server and Testing more efficiently
 
  * [Underscore Library](http://underscorejs.org/)
+
+## Autentication and testing through browsers, real and simulated
+
+ * [ORM Object-Relational Mapping](http://en.wikipedia.org/wiki/Object-relational_mapping)
+ * [PBKDF2 Password Encryption](http://en.wikipedia.org/wiki/PBKDF2)
+ * [Bcrypt Password Encryption](http://en.wikipedia.org/wiki/Bcrypt)
+ * [Scrypt Password Encryption](http://en.wikipedia.org/wiki/Scrypt)
+ * [CSRF Cross Site Resource Forgery Protection](http://en.wikipedia.org/wiki/Cross-site_request_forgery)
+ * [Jade Template Lanuage](http://jadelang.net/)
+ * [Same Origin Policy for JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Same_origin_policy_for_JavaScript)
+ * [WebKit Open Source Web Browser Engine](http://www.webkit.org/)
+ * [Chromium Blink fork from WebKit](http://www.chromium.org/blink)
+ * [Slimer JS - A JavaScript Scriptable (Gecko) Browser for Developers](http://slimerjs.org/)
+ * [Gecko Open Source Web Browser Engine](https://developer.mozilla.org/en-US/docs/Mozilla/Gecko)
+ * [JSTest running with PhantomJS](http://jstest.jcoglan.com/phantom.html)
+ * [Scripting for PhantomJS and SlimerJS](http://casperjs.org/)
+ * [WebSocket Protocol (old, in phantomJS)](https://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-76)
+ * [WebSocket Protocol recent](https://tools.ietf.org/html/rfc6455)
+ * [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/)
+ * [Node API for WebDriver](https://www.npmjs.org/package/wd)
+ * [NightWatch Browser Automated Testign against WebDriver](http://nightwatchjs.org/)
+ * [Testium Web Testing with PhantomJS or Selenium](https://www.npmjs.org/package/testium)
+ * [Fast Headless Full Stack testing in Node.js](http://zombie.labnotes.org/)
 
 ## 
 
